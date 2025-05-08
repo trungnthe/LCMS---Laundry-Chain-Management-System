@@ -1,0 +1,142 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: url("/background.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  border: 1px solid #d6e4ff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+  background: rgba(43, 93, 158, 0.2);
+  border-radius: 50%;
+}
+
+.login-form::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  background: rgba(43, 93, 158, 0.2);
+  border-radius: 50%;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2b5d9e;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: #e63946;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  margin: 8px auto;
+  background: #f0f5ff;
+  border: 1px solid #b0c4de;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-input:focus {
+  outline: none;
+  border: 1px solid #2b5d9e;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px rgba(43, 93, 158, 0.3);
+}
+
+.login-button,
+.login-register-button {
+  width: 100%;
+  max-width: 300px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2b5d9e;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button:hover,
+.login-register-button:hover {
+  background: #1f4c7a;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(43, 93, 158, 0.3);
+}
+
+.login-button:active,
+.login-register-button:active {
+  transform: scale(0.98);
+}
+
+.forgot-password {
+  color: #2b5d9e;
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-register-text {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 20px;
+}

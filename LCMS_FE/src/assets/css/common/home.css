@@ -1,0 +1,125 @@
+/* Reset & Cấu trúc chung */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  font-family: Arial, sans-serif !important;
+  background-color: #f8f9fa !important;
+  overflow-x: hidden !important;
+}
+
+/* Giữ nội dung trang đủ dài */
+.home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Giữ trang luôn chiếm toàn bộ chiều cao màn hình */
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  background: url("/banner.jpg") no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.banner-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.banner-subtitle {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+.banner-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.banner-button:hover {
+  background-color: #0056b3;
+}
+
+/* Dịch Vụ */
+.services,
+.benefits,
+.testimonials {
+  padding: 50px 20px;
+  text-align: center;
+  flex-grow: 1; /* Giúp phần nội dung trang co giãn hợp lý */
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.service-list,
+.benefit-list,
+.testimonial-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service-item,
+.benefit-item,
+.testimonial-item {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  transition: 0.3s;
+}
+
+.service-item:hover,
+.benefit-item:hover,
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+  background: #343a40;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  width: 100%;
+}

@@ -1,0 +1,701 @@
+/* Main container styles */
+.manage-shift-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.manage-shift {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 260px;
+}
+
+.manage-shift h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-top: 80px;
+}
+
+/* Header section with search and add button */
+.manage-shift-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.manage-shift-add-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.manage-shift-add-btn:hover {
+  background-color: #218838;
+}
+
+/* Search box styles */
+.manage-shift-search {
+  position: relative;
+  min-width: 300px;
+}
+
+.manage-shift-search-input {
+  width: 100%;
+  padding: 10px 40px 10px 35px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.manage-shift-search-input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.manage-shift-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.manage-shift-clear-search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.manage-shift-clear-search-icon:hover {
+  color: #dc3545;
+}
+
+/* Controls section - stats and filters */
+.manage-shift-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.manage-shift-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.manage-shift-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manage-shift-stat-label {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.manage-shift-stat-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.manage-shift-active {
+  color: #28a745;
+}
+
+.manage-shift-inactive {
+  color: #dc3545;
+}
+
+.manage-shift-filters {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.manage-shift-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manage-shift-filter-item label {
+  font-size: 14px;
+  color: #495057;
+}
+
+.manage-shift-filter-item select {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.manage-shift-filter-item select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Table styles */
+.manage-shift-table-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.manage-shift-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.manage-shift-table th {
+  background-color: #3498db;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.manage-shift-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+}
+
+.manage-shift-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.manage-shift-sort-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.manage-shift-sort-btn:hover {
+  color: #ffc107;
+}
+
+.manage-shift-status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.manage-shift-status-badge.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.manage-shift-status-badge.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.manage-shift-no-data {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Action buttons */
+.manage-shift-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.manage-shift-view-btn,
+.manage-shift-edit-btn,
+.manage-shift-toggle-btn,
+.manage-shift-delete-btn {
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.manage-shift-view-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.manage-shift-view-btn:hover {
+  background-color: #138496;
+}
+
+.manage-shift-edit-btn {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.manage-shift-edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.manage-shift-toggle-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.manage-shift-toggle-btn:hover {
+  background-color: #5a6268;
+}
+
+.manage-shift-delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.manage-shift-delete-btn:hover {
+  background-color: #c82333;
+}
+
+.manage-shift-view-btn:active,
+.manage-shift-edit-btn:active,
+.manage-shift-toggle-btn:active,
+.manage-shift-delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* Modal styles */
+.manage-shift-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.manage-shift-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.manage-shift-modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform 0.3s;
+}
+
+.manage-shift-modal.show .manage-shift-modal-content {
+  transform: translateY(0);
+}
+
+.manage-shift-modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.manage-shift-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #343a40;
+}
+
+.manage-shift-close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.manage-shift-close-modal-btn:hover {
+  color: #dc3545;
+}
+
+.manage-shift-modal-inputs {
+  padding: 20px;
+}
+
+.manage-shift-form-group {
+  margin-bottom: 15px;
+}
+
+.manage-shift-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.manage-shift-required {
+  color: #dc3545;
+}
+
+.manage-shift-form-group input,
+.manage-shift-form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.manage-shift-form-group input:focus,
+.manage-shift-form-group select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.manage-shift-modal-actions {
+  padding: 15px 20px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.manage-shift-modal-save-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.manage-shift-modal-save-btn:hover {
+  background-color: #218838;
+}
+
+.manage-shift-modal-close-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.manage-shift-modal-close-btn:hover {
+  background-color: #5a6268;
+}
+
+/* View modal styles */
+.manage-shift-view-modal .manage-shift-modal-content {
+  max-width: 450px;
+}
+
+.manage-shift-view-content {
+  padding: 20px;
+}
+
+.manage-shift-view-details {
+  text-align: center;
+}
+
+.manage-shift-view-title {
+  margin: 0 0 15px 0;
+  color: #343a40;
+  font-size: 22px;
+}
+
+.manage-shift-view-info {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.manage-shift-view-info p {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+/* Delete confirmation modal */
+.manage-shift-confirm-modal .manage-shift-modal-content {
+  max-width: 400px;
+}
+
+.manage-shift-confirm-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.manage-shift-warning {
+  color: #dc3545;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.manage-shift-delete-confirm-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.manage-shift-delete-confirm-btn:hover {
+  background-color: #c82333;
+}
+
+/* Loading and error states */
+.manage-shift-loading-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.manage-shift-error-container {
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #dc3545;
+}
+
+.manage-shift-reload-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.manage-shift-reload-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Pagination */
+.manage-shift-pagination {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.manage-shift-pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.manage-shift-pagination-btn {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.manage-shift-pagination-btn:hover:not(:disabled) {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+
+.manage-shift-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.manage-shift-pagination-btn.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.manage-shift-pagination-ellipsis {
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.manage-shift-pagination-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.manage-shift-records-per-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manage-shift-records-per-page select {
+  padding: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.manage-shift-page-info {
+  text-align: center;
+}
+
+.manage-shift-jump-to-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manage-shift-jump-to-page input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.manage-shift-jump-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.manage-shift-jump-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .manage-shift {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .manage-shift-header,
+  .manage-shift-controls,
+  .manage-shift-pagination-info {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .manage-shift-search {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .manage-shift-stats {
+    justify-content: space-around;
+  }
+
+  .manage-shift-filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .manage-shift-filter-item {
+    width: 100%;
+  }
+
+  .manage-shift-filter-item select {
+    width: 100%;
+  }
+
+  .manage-shift-table-container {
+    overflow-x: auto;
+  }
+
+  .manage-shift-table {
+    min-width: 600px;
+  }
+
+  .manage-shift-pagination-controls {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+  }
+}

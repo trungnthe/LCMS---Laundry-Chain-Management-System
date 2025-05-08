@@ -1,0 +1,723 @@
+.manage-inventory-detail-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px;
+  margin-left: 260px;
+}
+
+.manage-inventory-detail-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 80px;
+}
+.manage-inventory-detail-expired-row {
+  opacity: 0.7;
+  background-color: #f8f8f8;
+}
+
+/* Status indicators */
+.manage-inventory-detail-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.manage-inventory-detail-active {
+  background-color: rgba(76, 175, 80, 0.15);
+  color: #2e7d32;
+}
+
+.manage-inventory-detail-inactive {
+  background-color: rgba(244, 67, 54, 0.15);
+  color: #d32f2f;
+}
+
+.manage-inventory-detail-status-icon {
+  font-size: 14px;
+}
+
+.manage-inventory-detail-toggle-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manage-inventory-detail-disable-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.manage-inventory-detail-disable-btn:hover {
+  background-color: #c82333;
+}
+
+.manage-inventory-detail-enable-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.manage-inventory-detail-enable-btn:hover {
+  background-color: #218838;
+}
+/* Add these styles to your CSS file */
+
+/* Delete modal styles */
+.manage-inventory-detail-delete-confirmation {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.manage-inventory-detail-delete-confirmation p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.manage-inventory-detail-delete-confirmation strong {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* Modal button styles */
+.manage-inventory-detail-modal-delete-confirm {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 48%;
+}
+
+.manage-inventory-detail-modal-delete-confirm:hover {
+  background-color: #45a049;
+}
+
+/* Add animation for the delete modal */
+.manage-inventory-detail-modal.delete-modal
+  .manage-inventory-detail-modal-content {
+  animation: deleteModalIn 0.3s forwards;
+}
+
+@keyframes deleteModalIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Warning icon for delete modal */
+.delete-warning-icon {
+  color: #e74c3c;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* Modal title for delete confirmation */
+.manage-inventory-detail-modal-content h3.delete-title {
+  color: #e74c3c;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Additional styles for button placement */
+.manage-inventory-detail-modal.delete-modal
+  .manage-inventory-detail-modal-buttons {
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+/* Modal buttons */
+.manage-inventory-detail-modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.manage-inventory-detail-modal-save {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 48%;
+}
+
+.manage-inventory-detail-modal-save:hover {
+  background-color: #45a049;
+}
+
+.manage-inventory-detail-modal-cancel {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 48%;
+}
+
+.manage-inventory-detail-modal-cancel:hover {
+  background-color: #d32f2f;
+}
+
+/* Modal status checkbox */
+.manage-inventory-detail-modal-status {
+  margin: 15px 0;
+}
+
+.manage-inventory-detail-modal-status label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.manage-inventory-detail-modal-status input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Filter container inputs spacing */
+.manage-inventory-detail-filter-container input {
+  margin-right: 8px;
+  width: 80px;
+}
+.manage-inventory-detail-edit-btn:disabled,
+.manage-inventory-detail-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.manage-inventory-detail-edit-btn:disabled:hover,
+.manage-inventory-detail-delete-btn:disabled:hover {
+  background-color: inherit;
+  color: inherit;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .manage-inventory-detail-filter-sort-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .manage-inventory-detail-filter-container,
+  .manage-inventory-detail-sort-container {
+    width: 100%;
+  }
+
+  .manage-inventory-detail-container {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .manage-inventory-detail-table {
+    overflow-x: auto;
+    display: block;
+  }
+
+  .manage-inventory-detail-pagination {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Success and Error Messages */
+.manage-inventory-detail-success-message {
+  background-color: rgba(76, 175, 80, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in;
+  position: relative;
+  font-weight: 500;
+}
+
+.manage-inventory-detail-success-message::before {
+  content: "✓";
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.manage-inventory-detail-error-message {
+  background-color: rgba(244, 67, 54, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in;
+  position: relative;
+  font-weight: 500;
+}
+
+.manage-inventory-detail-error-message::before {
+  content: "✕";
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Add a nice fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Error text for individual form fields */
+.manage-inventory-detail-error-text {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.manage-inventory-detail-error-input {
+  border-color: #f44336 !important;
+}
+
+/* Style for form validation messages */
+.manage-inventory-detail-form-group .manage-inventory-detail-error-message {
+  font-size: 12px;
+  padding: 8px 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.manage-inventory-detail-success-message.fade-out,
+.manage-inventory-detail-error-message.fade-out {
+  animation: fadeOut 0.5s ease-in forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.manage-inventory-detail-add-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.manage-inventory-detail-add-btn:hover {
+  background-color: #2874a6;
+}
+
+.manage-inventory-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.manage-inventory-detail-table th,
+.manage-inventory-detail-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.manage-inventory-detail-table th {
+  background-color: #3498db;
+  color: white;
+}
+
+.manage-inventory-detail-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.manage-inventory-detail-edit-btn,
+.manage-inventory-detail-delete-btn {
+  padding: 6px 12px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.manage-inventory-detail-edit-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.manage-inventory-detail-edit-btn:hover {
+  background-color: #138496;
+}
+
+.manage-inventory-detail-delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.manage-inventory-detail-delete-btn:hover {
+  background-color: #c82333;
+}
+
+.manage-inventory-detail-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.manage-inventory-detail-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 700px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.manage-inventory-detail-modal-error {
+  color: #e74c3c;
+  background-color: #fadbd8;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.manage-inventory-detail-modal h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.manage-inventory-detail-modal-inputs,
+.manage-inventory-detail-modal-inputs select {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.manage-inventory-detail-modal-inputs input:focus,
+.manage-inventory-detail-modal-inputs select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.manage-inventory-detail-modal-save-btn,
+.manage-inventory-detail-modal-close-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 48%;
+}
+
+.manage-inventory-detail-modal-save-btn {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 16px;
+}
+
+.manage-inventory-detail-modal-save-btn:hover {
+  background-color: #27ae60;
+}
+
+.manage-inventory-detail-modal-close-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.manage-inventory-detail-modal-close-btn:hover {
+  background-color: #e53935;
+}
+
+.manage-inventory-detail-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.manage-inventory-detail-modal.show {
+  display: flex;
+}
+
+.manage-inventory-detail-modal.hide {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.manage-inventory-detail-search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.manage-inventory-detail-search-icon {
+  position: absolute;
+  color: #aaa;
+  pointer-events: none;
+  left: 5px;
+}
+
+.manage-inventory-detail-search input {
+  padding: 8px 10px 8px 35px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+}
+
+.manage-inventory-detail-search input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination-btn:hover {
+  background-color: #ddd;
+}
+
+.pagination-text {
+  font-size: 14px;
+}
+.manage-inventory-detail-filter-sort-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.manage-inventory-detail-filter-container,
+.manage-inventory-detail-sort-container {
+  display: flex;
+  align-items: center;
+}
+
+.manage-inventory-detail-filter-container label,
+.manage-inventory-detail-sort-container label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.manage-inventory-detail-filter-container input,
+.manage-inventory-detail-sort-container select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+.manage-inventory-detail-filter-container input:hover,
+.manage-inventory-detail-sort-container select:hover {
+  border-color: #3498db;
+}
+
+.manage-inventory-detail-filter-container button,
+.manage-inventory-detail-sort-container button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.manage-inventory-detail-filter-container button:hover,
+.manage-inventory-detail-sort-container button:hover {
+  background-color: #2980b9;
+}
+
+.manage-inventory-detail-filter-container button:active,
+.manage-inventory-detail-sort-container button:active {
+  transform: scale(0.95);
+}
+/* Pagination */
+.manage-inventory-detail-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.manage-inventory-detail-pagination-btn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-inventory-detail-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.manage-inventory-pagination-btn:not(:disabled):hover {
+  background-color: #e2e6ea;
+}
+
+.manage-inventory-detail-pagination-btn.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.manage-inventory-detail-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  width: 35px;
+  height: 35px;
+}
+
+/* Jump to page */
+.manage-inventory-detail-jump-to-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manage-inventory-detail-jump-input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.manage-inventory-detail-jump-btn {
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-inventory-detail-jump-btn:hover {
+  background-color: #2980b9;
+}
+
+.manage-inventory-detail-select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+/* Pagination controls */
+.manage-inventory-detail-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Records per page section */
+.manage-inventory-detail-records-per-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

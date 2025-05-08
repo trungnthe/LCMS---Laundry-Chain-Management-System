@@ -1,0 +1,233 @@
+/* Sidebar */
+.sidebar-admin {
+  width: 250px;
+  color: #ecf0f1;
+  position: fixed;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+  transform: translateX(0px);
+  background-color: #2874a6;
+  margin: 0px 10px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.sidebar-admin.active {
+  width: 0;
+  box-shadow: none;
+}
+
+.sidebar-brand span {
+  margin-left: 50px;
+}
+
+/* Sidebar Menu */
+.sidebar-menu-toggle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.sidebar-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: #ecf0f1;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 30px;
+  height: calc(100% - 30px); /* Full height minus top margin */
+  overflow-y: auto; /* Add scrollbar when content overflows */
+  padding-bottom: 20px; /* Space at bottom */
+}
+
+/* Scrollbar styling */
+.sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* Sidebar Button */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+/* Sidebar Link Hover (khi chưa active) */
+.sidebar-link:not(.active):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+}
+
+/* Active Sidebar Link (nút được chọn sẽ có màu nền nổi bật) */
+.sidebar-link.active {
+  background-color: #3498db !important; /* Màu nền nổi bật cho nút active */
+  font-weight: bold;
+  color: white !important; /* Đảm bảo chữ sáng */
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Style for dropdown headers when open */
+.sidebar-link.dropdown-active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+/* Prevent hover on active buttons */
+.sidebar-link.active:hover {
+  background-color: #3498db !important; /* Giữ nguyên nền khi hover trên nút đã active */
+  color: white !important;
+}
+
+/* Sidebar Link Icon */
+.sidebar-link svg {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+/* Submenu (Dịch vụ, Sản phẩm) */
+.submenu {
+  padding-left: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Show submenu when class 'show' is applied */
+.submenu.show {
+  display: flex;
+}
+
+.submenu .sidebar-link {
+  font-size: 14px;
+}
+
+/* Add toggle icon to indicate dropdown */
+.sidebar-link.toggle .dropdown-icon {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-link.dropdown-active .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Original sidebar code stays the same */
+
+/* Mobile responsiveness - improved */
+@media screen and (max-width: 991px) {
+  /* Tablet breakpoint */
+  .sidebar-admin {
+    width: 220px;
+    margin: 8px 10px;
+  }
+
+  .submenu {
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Small tablet & large mobile */
+  .sidebar-admin {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, width 0.3s ease;
+    z-index: 1000;
+    margin: 5px 8px;
+    width: 250px;
+  }
+
+  .sidebar-admin.active {
+    transform: translateX(0);
+    width: 250px;
+  }
+
+  .sidebar-menu-toggle {
+    display: block;
+  }
+
+  /* Add overlay when sidebar is open */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Small mobile devices */
+  .sidebar-admin {
+    width: 85%;
+    margin: 0;
+    border-radius: 0;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+
+  .sidebar-link {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  .submenu .sidebar-link {
+    font-size: 13px;
+  }
+
+  /* Ensure menu toggle is visible */
+  .sidebar-menu-toggle {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  /* Very small devices */
+  .sidebar-admin {
+    width: 100%;
+  }
+
+  .sidebar-link svg {
+    margin-right: 10px;
+  }
+}

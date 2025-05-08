@@ -1,0 +1,539 @@
+/* Main container styles */
+.manage-time-keeping-container {
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.manage-time-keeping {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 260px;
+}
+
+.manage-time-keeping h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-top: 80px;
+}
+
+/* Header section with search */
+.manage-time-keeping-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Search box styles */
+.manage-time-keeping-search {
+  position: relative;
+  min-width: 300px;
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.manage-time-keeping-search-input-container {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.manage-time-keeping-search-input {
+  width: 100%;
+  padding: 10px 40px 10px 35px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.manage-time-keeping-search-input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.manage-time-keeping-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.manage-time-keeping-clear-search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.manage-time-keeping-clear-search-icon:hover {
+  color: #dc3545;
+}
+
+.manage-time-keeping-search-btn {
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.manage-time-keeping-search-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Controls section */
+.manage-time-keeping-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.manage-time-keeping-total {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #444;
+}
+
+.manage-time-keeping-sort-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.manage-time-keeping-sort-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.manage-time-keeping-sort-btn:hover {
+  background-color: #5a6268;
+}
+
+.manage-time-keeping-sort-btn.active {
+  background-color: #3498db;
+}
+
+/* Table styles */
+.manage-time-keeping-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.manage-time-keeping-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.manage-time-keeping-table th {
+  background-color: #3498db;
+  color: white;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.manage-time-keeping-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.manage-time-keeping-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.manage-time-keeping-table tr:hover {
+  background-color: #e9ecef;
+}
+
+.manage-time-keeping-no-data {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Action buttons */
+.manage-time-keeping-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.manage-time-keeping-edit-btn {
+  padding: 6px 12px;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.manage-time-keeping-edit-btn:hover {
+  background-color: #138496;
+}
+
+/* Pagination controls */
+.manage-time-keeping-pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.manage-time-keeping-pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.manage-time-keeping-records-per-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manage-time-keeping-select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Pagination */
+.manage-time-keeping-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.manage-time-keeping-pagination-btn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-time-keeping-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.manage-time-keeping-pagination-btn:not(:disabled):hover {
+  background-color: #e2e6ea;
+}
+
+.manage-time-keeping-pagination-numbers {
+  display: flex;
+  gap: 5px;
+}
+
+.manage-time-keeping-pagination-number {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.manage-time-keeping-pagination-number.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.manage-time-keeping-pagination-number:not(.active):hover {
+  background-color: #e2e6ea;
+}
+
+.manage-time-keeping-pagination-ellipsis {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+/* Jump to page */
+.manage-time-keeping-jump-to-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manage-time-keeping-jump-input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.manage-time-keeping-jump-btn {
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-time-keeping-jump-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Loading state */
+.manage-time-keeping-loading-container {
+  text-align: center;
+  padding: 50px;
+  color: #6c757d;
+}
+
+/* Error state */
+.manage-time-keeping-error-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.manage-time-keeping-reload-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-time-keeping-reload-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Modal styles */
+.manage-time-keeping-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.manage-time-keeping-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.manage-time-keeping-modal-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-20px);
+  transition: transform 0.3s;
+}
+
+.manage-time-keeping-modal.show .manage-time-keeping-modal-content {
+  transform: translateY(0);
+}
+
+.manage-time-keeping-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.manage-time-keeping-modal-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.manage-time-keeping-close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.manage-time-keeping-modal-body {
+  padding: 20px;
+}
+
+/* Form groups */
+.manage-time-keeping-form-group {
+  margin-bottom: 20px;
+}
+
+.manage-time-keeping-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.manage-time-keeping-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.manage-time-keeping-input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.manage-time-keeping-error {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  font-size: 14px;
+  border-left: 3px solid #dc3545;
+}
+
+/* Modal action buttons */
+.manage-time-keeping-modal-actions {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #dee2e6;
+}
+
+.manage-time-keeping-modal-save-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.manage-time-keeping-modal-save-btn:hover {
+  background-color: #218838;
+}
+
+.manage-time-keeping-modal-close-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.manage-time-keeping-modal-close-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .manage-time-keeping {
+    margin-left: 0;
+  }
+
+  .manage-time-keeping-header,
+  .manage-time-keeping-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .manage-time-keeping-search {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .manage-time-keeping-sort-controls {
+    justify-content: center;
+  }
+
+  .manage-time-keeping-pagination-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .manage-time-keeping-pagination-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,1456 @@
+/* Dashboard Staff Main Styles */
+.dashboard-staff {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+
+/* Dashboard Staff Main Container */
+.dashboard-staff-main-container {
+  display: flex;
+  flex: 1;
+}
+
+/* Dashboard Staff Main Content */
+.dashboard-staff-main-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.dashboard-staff-page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dashboard-staff-page-title h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard-staff-order-counts {
+  display: flex;
+  gap: 16px;
+}
+
+.dashboard-staff-count-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eef1ff;
+  color: #5a6acf;
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 80px;
+}
+
+.dashboard-staff-count-badge.warning {
+  background-color: #fff4e5;
+  color: #ff9800;
+}
+
+.dashboard-staff-count-badge.pending {
+  background-color: #e5f6ff;
+  color: #03a9f4;
+}
+
+.dashboard-staff-count-badge.success {
+  background-color: #e8f5e9;
+  color: #4caf50;
+}
+
+.dashboard-staff-count-value {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.dashboard-staff-count-label {
+  font-size: 12px;
+}
+
+/* Dashboard Staff Grid */
+.dashboard-staff-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: px;
+}
+
+.dashboard-staff-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  overflow: hidden;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+
+.dashboard-staff-orders-card {
+  grid-column: span 2;
+}
+
+.dashboard-staff-delivery-card,
+.dashboard-staff-tasks-card,
+.dashboard-staff-completed-card,
+.dashboard-staff-info-notification-card {
+  grid-column: span 1;
+}
+
+.dashboard-staff-info-notification-card {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.dashboard-staff-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.dashboard-staff-card-header h3 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard-staff-view-all-btn {
+  background: none;
+  border: none;
+  color: #5a6acf;
+  font-size: 19px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Dashboard Staff Order List */
+.dashboard-staff-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+.dashboard-staff-order-item {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 3px solid #5a6acf;
+}
+
+.dashboard-staff-order-item.overdue {
+  border-left-color: #ff5252;
+}
+
+.dashboard-staff-order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.dashboard-staff-order-id {
+  font-weight: 600;
+  color: #5a6acf;
+}
+
+.dashboard-staff-order-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.dashboard-staff-status-processing {
+  background-color: #eef1ff;
+  color: #5a6acf;
+}
+
+.dashboard-staff-status-overdue {
+  background-color: #ffeeee;
+  color: #ff5252;
+}
+
+.dashboard-staff-order-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard-staff-order-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.dashboard-staff-customer-name {
+  font-weight: 500;
+}
+
+.dashboard-staff-service-type {
+  color: #7b8794;
+  font-size: 15px;
+}
+
+.dashboard-staff-order-items {
+  font-size: 15px;
+}
+
+.dashboard-staff-order-deadline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #7b8794;
+}
+
+.dashboard-staff-order-progress {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dashboard-staff-progress-bar {
+  flex: 1;
+  height: 6px;
+  background-color: #e5e9f2;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dashboard-staff-progress {
+  height: 100%;
+  background-color: #5a6acf;
+  border-radius: 3px;
+}
+
+.dashboard-staff-progress-value {
+  font-size: 15px;
+  font-weight: 500;
+  color: #5a6acf;
+  min-width: 36px;
+  text-align: right;
+}
+
+.dashboard-staff-order-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.dashboard-staff-action-btn {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-left: 100px;
+  max-width: 30% !important;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.dashboard-staff-update-btn {
+  background-color: red#b92015;
+  color: black;
+}
+
+.dashboard-staff-update-btn:hover {
+  background-color: #5f7cdd;
+}
+
+.dashboard-staff-complete-btn {
+  width: 50%;
+  background-color: #43bd53;
+  color: white;
+}
+
+.dashboard-staff-complete-btn:hover {
+  background-color: #63acce;
+}
+
+/* Dashboard Staff Delivery List */
+.dashboard-staff-delivery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+.dashboard-staff-delivery-item {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 3px solid #03a9f4;
+}
+
+.dashboard-staff-delivery-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.dashboard-staff-delivery-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dashboard-staff-customer-contact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #7b8794;
+}
+
+.dashboard-staff-delivery-address {
+  font-size: 15px;
+  color: #7b8794;
+}
+
+.dashboard-staff-delivery-actions {
+  margin-top: 16px;
+}
+
+.dashboard-staff-deliver-btn {
+  width: 50%;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background-color: #03a9f4;
+  color: white;
+  transition: all 0.2s ease;
+  margin-left: auto; /* Đẩy nút sang phải */
+  display: block; /* Đảm bảo nút là block element */
+}
+
+.dashboard-staff-deliver-btn:hover {
+  background-color: #0288d1;
+}
+
+/* Customer Feedback CSS */
+
+.dashboard-staff-feedback-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.dashboard-staff-feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaedf2;
+}
+
+.dashboard-staff-feedback-header h3 {
+  font-size: 18px;
+  color: #2d3748;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard-staff-feedback-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.dashboard-staff-feedback-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #718096;
+  font-size: 14px;
+}
+
+.dashboard-staff-feedback-stat-item svg {
+  font-size: 16px;
+  color: #4c6ef5;
+}
+
+.dashboard-staff-feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard-staff-feedback-item {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #cbd5e0;
+  transition: all 0.2s ease;
+}
+
+.dashboard-staff-feedback-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.dashboard-staff-feedback-positive {
+  border-left-color: #38b2ac;
+}
+
+.dashboard-staff-feedback-neutral {
+  border-left-color: #4299e1;
+}
+
+.dashboard-staff-feedback-negative {
+  border-left-color: #e53e3e;
+}
+
+.dashboard-staff-feedback-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.dashboard-staff-feedback-customer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard-staff-feedback-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #e2e8f0;
+  color: #4a5568;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.dashboard-staff-feedback-customer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-staff-feedback-customer-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  color: #2d3748;
+}
+
+.dashboard-staff-feedback-service {
+  font-size: 12px;
+  color: #718096;
+  background-color: #edf2f7;
+  padding: 2px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.dashboard-staff-feedback-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.dashboard-staff-feedback-star {
+  font-size: 16px;
+  color: #cbd5e0;
+}
+
+.dashboard-staff-feedback-star-filled {
+  color: #f6ad55;
+}
+
+.dashboard-staff-feedback-content {
+  margin-bottom: 14px;
+}
+
+.dashboard-staff-feedback-content p {
+  margin: 0;
+  color: #4a5568;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.dashboard-staff-feedback-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.dashboard-staff-feedback-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #a0aec0;
+  font-size: 12px;
+}
+
+.dashboard-staff-feedback-time-icon {
+  font-size: 14px;
+}
+
+.dashboard-staff-feedback-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.dashboard-staff-feedback-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dashboard-staff-feedback-more-btn {
+  background-color: transparent;
+  border: 1px solid #e2e8f0;
+  color: #4a5568;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dashboard-staff-feedback-more-btn:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .dashboard-staff-feedback-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .dashboard-staff-feedback-item-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dashboard-staff-feedback-rating {
+    align-self: flex-start;
+  }
+
+  .dashboard-staff-feedback-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dashboard-staff-feedback-actions {
+    width: 100%;
+  }
+}
+
+/* Inventory Section CSS */
+
+.dashboard-staff-inventory-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.dashboard-staff-inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dashboard-staff-inventory-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-staff-inventory-icon {
+  font-size: 22px;
+  color: #4c6ef5;
+}
+
+.dashboard-staff-inventory-title h3 {
+  font-size: 18px;
+  color: #2d3748;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard-staff-inventory-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dashboard-staff-inventory-search {
+  position: relative;
+}
+
+.dashboard-staff-inventory-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.dashboard-staff-inventory-search-input {
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #4a5568;
+  width: 220px;
+  transition: all 0.2s ease;
+}
+
+.dashboard-staff-inventory-search-input:focus {
+  outline: none;
+  border-color: #4c6ef5;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.1);
+}
+
+.dashboard-staff-inventory-filter {
+  position: relative;
+}
+
+.dashboard-staff-inventory-filter-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.dashboard-staff-inventory-filter-select {
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #4a5568;
+  background-color: #ffffff;
+  cursor: pointer;
+  appearance: none;
+  width: 180px;
+  transition: all 0.2s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a0aec0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.dashboard-staff-inventory-filter-select:focus {
+  outline: none;
+  border-color: #4c6ef5;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.1);
+}
+
+.dashboard-staff-inventory-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #4a5568;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dashboard-staff-inventory-button:hover {
+  background-color: #edf2f7;
+}
+
+.dashboard-staff-inventory-content {
+  margin-bottom: 20px;
+}
+
+.dashboard-staff-inventory-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.dashboard-staff-inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.dashboard-staff-inventory-table thead {
+  background-color: #f7fafc;
+}
+
+.dashboard-staff-inventory-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #4a5568;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.dashboard-staff-inventory-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+}
+
+.dashboard-staff-inventory-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.dashboard-staff-inventory-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.dashboard-staff-inventory-item-name {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.dashboard-staff-inventory-quantity {
+  font-weight: 600;
+  text-align: center;
+}
+
+.dashboard-staff-inventory-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-staff-inventory-status-icon {
+  font-size: 16px;
+}
+
+.dashboard-staff-inventory-status-icon.active {
+  color: #38b2ac;
+}
+
+.dashboard-staff-inventory-status-icon.inactive {
+  color: #718096;
+}
+
+.dashboard-staff-inventory-warning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.dashboard-staff-inventory-critical {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #fed7d7;
+}
+
+.dashboard-staff-inventory-warning {
+  background-color: #fffaf0;
+  color: #dd6b20;
+  border: 1px solid #feebc8;
+}
+
+.dashboard-staff-inventory-normal {
+  background-color: #f0fff4;
+  color: #38a169;
+  border: 1px solid #c6f6d5;
+}
+
+.dashboard-staff-inventory-out-of-stock {
+  background-color: #f7fafc;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+}
+
+.dashboard-staff-inventory-warning-level {
+  font-weight: 600;
+}
+
+.dashboard-staff-inventory-no-data {
+  text-align: center;
+  padding: 40px 0 !important;
+  color: #a0aec0;
+}
+
+.dashboard-staff-inventory-no-data svg {
+  font-size: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.dashboard-staff-inventory-summary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.dashboard-staff-inventory-summary-item {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-staff-inventory-summary-label {
+  font-weight: 500;
+}
+
+.dashboard-staff-inventory-summary-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dashboard-staff-inventory-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.dashboard-staff-inventory-report-button {
+  padding: 10px 16px;
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #4a5568;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dashboard-staff-inventory-report-button:hover {
+  background-color: #edf2f7;
+}
+
+.dashboard-staff-inventory-add-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(30, 60, 114, 0.2);
+}
+
+.dashboard-staff-inventory-add-button:hover {
+  background: linear-gradient(135deg, #2a5298 0%, #3a62b8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(30, 60, 114, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .dashboard-staff-inventory-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-staff-inventory-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dashboard-staff-inventory-search-input {
+    width: 100%;
+  }
+
+  .dashboard-staff-inventory-filter-select {
+    width: 100%;
+  }
+
+  .dashboard-staff-inventory-summary {
+    flex-direction: column;
+  }
+
+  .dashboard-staff-inventory-summary-item {
+    width: 100%;
+  }
+
+  .dashboard-staff-inventory-footer {
+    flex-direction: column;
+  }
+
+  .dashboard-staff-inventory-report-button,
+  .dashboard-staff-inventory-add-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Animation xoay */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.dashboard-staff-loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Chiều cao 100% màn hình */
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+.dashboard-staff-no-orders {
+  text-align: center;
+  padding: 40px 0;
+  color: #888;
+  font-size: 1.1rem;
+}
+/* Mobile Responsive Additions for Dashboard Staff */
+
+/* General responsive layout */
+@media (max-width: 767px) {
+  /* Main content area adjustments */
+  .dashboard-staff-main-content {
+    padding: 16px;
+  }
+
+  /* Page title and counts */
+  .dashboard-staff-page-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .dashboard-staff-order-counts {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  /* Dashboard grid */
+  .dashboard-staff-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-staff-card {
+    grid-column: span 1 !important;
+  }
+
+  .dashboard-staff-info-notification-card {
+    grid-template-columns: 1fr;
+  }
+
+  /* Order items */
+  .dashboard-staff-order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .dashboard-staff-order-info {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-staff-order-progress {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .dashboard-staff-progress-bar {
+    width: 100%;
+  }
+
+  .dashboard-staff-order-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dashboard-staff-action-btn {
+    max-width: 100% !important;
+    margin-left: 0;
+  }
+
+  .dashboard-staff-complete-btn,
+  .dashboard-staff-deliver-btn {
+    width: 100%;
+  }
+
+  /* Delivery items */
+  .dashboard-staff-delivery-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Inventory section */
+  .dashboard-staff-inventory-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dashboard-staff-inventory-search,
+  .dashboard-staff-inventory-filter {
+    width: 100%;
+  }
+
+  .dashboard-staff-inventory-search-input,
+  .dashboard-staff-inventory-filter-select {
+    width: 100%;
+  }
+
+  .dashboard-staff-inventory-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Table responsiveness */
+  .dashboard-staff-inventory-table {
+    display: block;
+  }
+
+  .dashboard-staff-inventory-table thead,
+  .dashboard-staff-inventory-table tbody,
+  .dashboard-staff-inventory-table th,
+  .dashboard-staff-inventory-table td,
+  .dashboard-staff-inventory-table tr {
+    display: block;
+  }
+
+  .dashboard-staff-inventory-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .dashboard-staff-inventory-table tr {
+    border: 1px solid #e2e8f0;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+
+  .dashboard-staff-inventory-table td {
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .dashboard-staff-inventory-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .dashboard-staff-inventory-table td:before {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    content: attr(data-label);
+  }
+
+  /* Small mobile phones */
+  @media (max-width: 375px) {
+    .dashboard-staff-count-badge {
+      min-width: 60px;
+      padding: 6px 10px;
+    }
+
+    .dashboard-staff-count-value {
+      font-size: 16px;
+    }
+
+    .dashboard-staff-count-label {
+      font-size: 10px;
+    }
+
+    .dashboard-staff-card {
+      padding: 16px 12px;
+    }
+
+    .dashboard-staff-card-header h3 {
+      font-size: 16px;
+    }
+
+    .dashboard-staff-view-all-btn {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Tablet responsive layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .dashboard-staff-dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-staff-orders-card {
+    grid-column: span 2;
+  }
+
+  .dashboard-staff-info-notification-card {
+    grid-column: span 2;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Inventory section for tablets */
+  .dashboard-staff-inventory-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .dashboard-staff-inventory-search,
+  .dashboard-staff-inventory-filter {
+    width: 48%;
+  }
+
+  .dashboard-staff-inventory-button {
+    margin-top: 8px;
+  }
+}
+
+/* Fix for feedback display on small screens */
+@media (max-width: 480px) {
+  .dashboard-staff-feedback-customer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .dashboard-staff-feedback-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+/* Fix for loading spinner on mobile */
+@media (max-width: 767px) {
+  .dashboard-staff-loading-spinner {
+    height: 70vh;
+  }
+
+  .spinner {
+    width: 32px;
+    height: 32px;
+    border-width: 3px;
+  }
+}
+
+/* Landscape mode for mobile phones */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .dashboard-staff-dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-staff-orders-card {
+    grid-column: span 2;
+  }
+
+  .dashboard-staff-loading-spinner {
+    height: 200px;
+  }
+}
+
+/* Fix viewport issues on mobile */
+@media (max-width: 767px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
+  .dashboard-staff {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Improved interaction for touch devices */
+  .dashboard-staff-action-btn,
+  .dashboard-staff-deliver-btn,
+  .dashboard-staff-inventory-button,
+  .dashboard-staff-inventory-add-button {
+    min-height: 44px; /* Better touch target size */
+  }
+
+  /* Make tables scrollable horizontally on mobile */
+  .dashboard-staff-inventory-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Improve form elements on mobile */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+
+  .dashboard-staff-inventory-search-input,
+  .dashboard-staff-inventory-filter-select {
+    height: 44px;
+  }
+}
+.dashboard-staff-feedback-pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.dashboard-staff-feedback-pagination button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.dashboard-staff-feedback-pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Feedback Reply Form Container */
+.dashboard-staff-feedback-reply-form {
+  background-color: #f8f9ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid #e1e5f2;
+}
+
+/* Suggested Replies Section */
+.suggested-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* Suggested Reply Buttons */
+.suggested-reply-btn {
+  background-color: #eef1fd;
+  color: #3a56e4;
+  border: 1px solid #d0d7f7;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggested-reply-btn:hover {
+  background-color: #dce3fc;
+  transform: translateY(-1px);
+}
+
+.suggested-reply-btn:active {
+  transform: translateY(1px);
+  background-color: #c9d4fc;
+}
+
+/* Reply Textarea */
+.dashboard-staff-feedback-reply-form textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #dde3f0;
+  background-color: #ffffff;
+  font-size: 15px;
+  margin-bottom: 16px;
+  resize: vertical;
+  transition: border 0.3s ease;
+  color: #333;
+  font-family: inherit;
+}
+
+.dashboard-staff-feedback-reply-form textarea:focus {
+  border-color: #3a56e4;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(58, 86, 228, 0.15);
+}
+
+.dashboard-staff-feedback-reply-form textarea::placeholder {
+  color: #a0a8c0;
+}
+
+/* Submit Button */
+.dashboard-staff-feedback-reply-form button {
+  background-color: #3a56e4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+  margin-left: auto;
+  box-shadow: 0 2px 6px rgba(58, 86, 228, 0.3);
+}
+
+.dashboard-staff-feedback-reply-form button:hover {
+  background-color: #2e44c0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(58, 86, 228, 0.4);
+}
+
+.dashboard-staff-feedback-reply-form button:active {
+  transform: translateY(0);
+  background-color: #233592;
+  box-shadow: 0 2px 3px rgba(58, 86, 228, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .suggested-replies {
+    gap: 8px;
+  }
+
+  .suggested-reply-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .dashboard-staff-feedback-reply-form {
+    padding: 16px;
+  }
+
+  .dashboard-staff-feedback-reply-form button {
+    width: 100%;
+    padding: 10px;
+  }
+} /* Reply Button Styling */
+.dashboard-staff-feedback-reply-btn {
+  background-color: #f0f4ff;
+  color: #3a56e4;
+  border: 1px solid #d0d7f7;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  outline: none;
+}
+
+.dashboard-staff-feedback-reply-btn:hover {
+  background-color: #e1e9ff;
+  border-color: #b1bff0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(58, 86, 228, 0.15);
+}
+
+.dashboard-staff-feedback-reply-btn:active {
+  transform: translateY(0);
+  background-color: #d3dfff;
+  box-shadow: 0 1px 2px rgba(58, 86, 228, 0.1);
+}
+
+/* Add an icon if desired */
+.dashboard-staff-feedback-reply-btn::before {
+  content: "↩"; /* Reply arrow symbol */
+  margin-right: 6px;
+  font-size: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-staff-feedback-reply-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+.notification-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.notification-tabs button {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  color: #555;
+}
+
+.notification-tabs button.active {
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+}
+.dashboard-staff-loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+.staff-loading-spinner-circle {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

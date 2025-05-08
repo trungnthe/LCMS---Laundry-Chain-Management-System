@@ -1,0 +1,134 @@
+/* Sidebar Manager */
+.dashboard-manager-sidebar {
+  width: 250px;
+  color: #ecf0f1;
+  position: fixed;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+  transform: translateX(0px);
+  background-color: #2874a6;
+  margin: 10px 16px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.dashboard-manager-sidebar.active {
+  width: 0;
+  box-shadow: none;
+}
+
+.dashboard-manager-sidebar-brand span {
+  margin-left: 50px;
+}
+
+/* Sidebar Menu */
+.dashboard-manager-sidebar-menu-toggle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.dashboard-manager-sidebar-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: #ecf0f1;
+}
+
+.dashboard-manager-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 30px;
+  height: calc(100% - 30px);
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+/* Scrollbar styling */
+.dashboard-manager-sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dashboard-manager-sidebar-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.dashboard-manager-sidebar-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* Sidebar Button */
+.dashboard-manager-sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+/* Sidebar Link Hover (khi chưa active) */
+.dashboard-manager-sidebar-link:not(.active):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+}
+
+/* Active Sidebar Link (nút được chọn sẽ có màu nền nổi bật) */
+.dashboard-manager-sidebar-link.active {
+  background-color: #3498db !important;
+  font-weight: bold;
+  color: white !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Style for dropdown headers when open */
+.dashboard-manager-sidebar-link.dropdown-active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+/* Prevent hover on active buttons */
+.dashboard-manager-sidebar-link.active:hover {
+  background-color: #3498db !important;
+  color: white !important;
+}
+
+/* Sidebar Link Icon */
+.dashboard-manager-sidebar-link svg {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .dashboard-manager-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .dashboard-manager-sidebar.active {
+    transform: translateX(0);
+    width: 250px;
+  }
+
+  .dashboard-manager-sidebar-menu-toggle {
+    display: block;
+  }
+}

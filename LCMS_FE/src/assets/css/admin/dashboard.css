@@ -1,0 +1,1230 @@
+/* Main Dashboard Styles */
+.dashboard-admin-container {
+  display: flex;
+  background-color: #f0f5ff;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+.dashboard-admin-chart-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  width: 100%;
+}
+
+.dashboard-admin-main-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  padding: 1.5rem;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  margin-top: 100px;
+}
+.admin-service-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-service-pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 60px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.admin-service-pagination button:hover:not(:disabled) {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  border-color: #c7d2fe;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.admin-service-pagination button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.admin-service-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+
+.admin-service-pagination span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  min-width: 60px;
+  justify-content: center;
+}
+
+/* Phiên bản active cho nút phân trang */
+.admin-service-pagination button.active {
+  background-color: #1a73e8;
+  color: white;
+  border-color: #1a73e8;
+}
+
+/* Responsive cho phân trang */
+@media screen and (max-width: 576px) {
+  .admin-service-pagination {
+    flex-wrap: wrap;
+  }
+
+  .admin-service-pagination button {
+    padding: 6px 12px;
+    font-size: 13px;
+    min-width: auto;
+  }
+
+  .admin-service-pagination span {
+    font-size: 13px;
+  }
+}
+
+/* Summary Widgets */
+.dashboard-admin-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-admin-widget {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-admin-widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-admin-widget-icon-wrapper {
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.dashboard-admin-widget-icon {
+  font-size: 1.5rem;
+}
+
+.dashboard-admin-widget-content {
+  flex: 1;
+}
+
+.dashboard-admin-widget-content h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #5f6368;
+  font-weight: 500;
+}
+
+.dashboard-admin-widget-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #1a73e8;
+}
+
+.dashboard-admin-widget-change {
+  font-size: 0.8rem;
+  color: #34a853;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+/* Revenue Filter Section */
+.dashboard-admin-revenue-filter {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  min-height: fit-content;
+}
+
+.dashboard-admin-tab-container {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 0.75rem;
+}
+
+.dashboard-admin-tab {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #f0f5ff;
+  color: #5f6368;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.dashboard-admin-tab:hover {
+  background-color: #e8f0fe;
+}
+
+.dashboard-admin-tab.active {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.dashboard-admin-tab svg {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.dashboard-admin-export-btn {
+  margin-left: auto;
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  border: 1px solid #1a73e8;
+}
+
+.dashboard-admin-export-btn:hover {
+  background-color: #d9e8fc;
+}
+
+/* Chart Section */
+.dashboard-admin-chart-section {
+  padding: 1rem 0;
+  width: 100%;
+  overflow: visible;
+}
+
+.dashboard-admin-chart-container {
+  width: 100%;
+  min-height: fit-content;
+  max-width: 100%;
+}
+
+.dashboard-admin-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dashboard-admin-chart-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  position: relative;
+  padding-left: 14px;
+}
+.dashboard-admin-chart-header h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 18px;
+  background: linear-gradient(45deg, #4361ee, #3f37c9);
+  border-radius: 2px;
+}
+
+.dashboard-admin-select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+  font-size: 0.9rem;
+  color: #5f6368;
+  cursor: pointer;
+}
+
+.dashboard-admin-doughnut-wrapper {
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Bottom Section */
+.dashboard-admin-bottom-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-admin-ongoing-orders,
+.dashboard-admin-order-performance {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-admin-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-admin-section-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #202124;
+}
+
+.dashboard-admin-view-all {
+  color: #1a73e8;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Orders List */
+.dashboard-admin-orders-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.dashboard-admin-order-item {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-admin-order-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-admin-order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-admin-order-id {
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+.dashboard-admin-order-customer {
+  font-size: 0.9rem;
+  color: #5f6368;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.dashboard-admin-order-details {
+  margin-bottom: 1rem;
+}
+
+.dashboard-admin-order-date {
+  font-size: 0.8rem;
+  color: #5f6368;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-admin-order-service {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #202124;
+}
+
+.dashboard-admin-order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-admin-order-amount {
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+.dashboard-admin-order-action {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dashboard-admin-order-action:hover {
+  background-color: #d9e8fc;
+}
+
+.dashboard-admin-order-action.active {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.dashboard-admin-add-order {
+  background-color: #f0f5ff;
+  border: 2px dashed #1a73e8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  min-height: 150px;
+  transition: background-color 0.2s ease;
+}
+
+.dashboard-admin-add-order:hover {
+  background-color: #e8f0fe;
+}
+
+.dashboard-admin-add-icon {
+  font-size: 2rem;
+  color: #1a73e8;
+}
+
+/* Order Performance */
+.dashboard-admin-performance-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.dashboard-admin-performance-chart {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  max-width: 200px;
+}
+
+.dashboard-admin-performance-percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a73e8;
+}
+
+.dashboard-admin-performance-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.dashboard-admin-stat-item {
+  text-align: center;
+}
+
+.dashboard-admin-stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a73e8;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-admin-stat-label {
+  font-size: 0.8rem;
+  color: #5f6368;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1280px) {
+  .dashboard-admin-orders-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .dashboard-admin-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-admin-bottom-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-admin-main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .dashboard-admin-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-admin-tab-container {
+    flex-wrap: wrap;
+  }
+
+  .dashboard-admin-tab {
+    margin-bottom: 0.5rem;
+  }
+
+  .dashboard-admin-orders-list {
+    grid-template-columns: 1fr;
+  }
+}
+/* grapth */
+.dashboard-admin-branch-revenue-section {
+  margin-top: 24px;
+}
+
+.dashboard-admin-branch-revenue-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 16px;
+}
+.dashboard-admin-branch-revenue-summary {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.dashboard-admin-total-revenue-card {
+  margin-top: 20px;
+  background: linear-gradient(135deg, rgb(230, 243, 255), rgb(210, 230, 255));
+  color: #2c3e50;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(67, 97, 238, 0.08);
+  border: 1px solid rgba(200, 220, 255, 0.5);
+  margin-bottom: 20px;
+}
+
+.dashboard-admin-total-revenue-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-admin-total-revenue-value {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #3f37c9;
+}
+
+.dashboard-admin-total-revenue-label {
+  font-size: 16px;
+  color: #64748b;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.dashboard-admin-branch-chart {
+  height: 350px;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-admin-branch-chart:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Phần chi tiết doanh thu chi nhánh */
+.dashboard-admin-single-branch-section {
+  margin-top: 24px;
+}
+
+.dashboard-admin-single-branch-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 16px;
+}
+.dashboard-admin-single-branch-info {
+  padding: 16px;
+}
+
+.dashboard-admin-branch-detail-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+}
+
+.dashboard-admin-branch-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-admin-branch-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.dashboard-admin-branch-name::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #27ae60;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dashboard-admin-branch-period {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.dashboard-admin-branch-revenue {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4361ee;
+  padding: 12px 24px;
+  background: rgba(67, 97, 238, 0.1);
+  border-radius: 8px;
+  display: inline-block;
+}
+/* Phần doanh thu dịch vụ */
+.dashboard-admin-service-revenue-section {
+  margin-top: 24px;
+}
+
+.dashboard-admin-service-revenue-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+.dashboard-admin-service-revenue-summary {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.dashboard-admin-service-chart {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  height: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+}
+/* Phần chi tiết doanh thu dịch vụ */
+.dashboard-admin-service-detail-section {
+  margin-top: 32px;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.dashboard-admin-service-detail-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+.dashboard-admin-service-table {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+/* Phần doanh thu khách hàng */
+.dashboard-admin-customer-table {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  margin-top: 28px;
+  background-color: #ffffff;
+}
+
+/* Phần chi tiết khách hàng cụ thể */
+.dashboard-admin-single-customer-section {
+  margin-top: 24px;
+}
+
+.dashboard-admin-single-customer-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+.dashboard-admin-customer-detail-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px;
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s;
+}
+
+.dashboard-admin-customer-detail-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-admin-customer-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.dashboard-admin-customer-name::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+  border-radius: 50%;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.dashboard-admin-customer-period {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.dashboard-admin-customer-revenue {
+  font-size: 26px;
+  font-weight: 800;
+  color: #4361ee;
+  padding: 14px 28px;
+  background: rgba(67, 97, 238, 0.12);
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 3px 8px rgba(67, 97, 238, 0.15);
+  transition: all 0.2s;
+}
+.dashboard-admin-customer-revenue:hover {
+  background: rgba(67, 97, 238, 0.18);
+  transform: scale(1.03);
+}
+.dashboard-admin-no-data,
+.no-data-message {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #64748b;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 20px;
+  font-size: 15px;
+}
+.dashboard-admin-top-customers-section {
+  margin-top: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+}
+
+.dashboard-admin-top-customers-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 15px;
+}
+.dashboard-admin-top-customers-section h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 18px;
+  background: linear-gradient(180deg, #4361ee 0%, #3f37c9 100%);
+  border-radius: 2px;
+}
+.dashboard-admin-top-customers-chart {
+  height: 450px;
+  margin: 25px 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-admin-top-customers-chart:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+/* PaymentType */
+.dashboard-admin-payment-revenue-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px 0;
+}
+.dashboard-admin-chart-summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.dashboard-admin-payment-content {
+  display: flex;
+  justify-content: flex-start; /* Căn trái thay vì căn giữa */
+  width: 100%;
+}
+.dashboard-admin-payment-table {
+  margin-top: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-admin-payment-table h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #495057;
+}
+
+/* Filter in Switch case */
+.dashboard-admin-filter-section {
+  display: flex;
+  align-items: flex-end; /* Căn chỉnh các phần tử theo cạnh dưới */
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.dashboard-admin-filter-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.dashboard-admin-filter-item label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.dashboard-admin-select,
+.dashboard-admin-date-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 45px;
+}
+
+.dashboard-admin-date-picker {
+  position: relative;
+}
+
+.dashboard-admin-calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.dashboard-admin-view-btn {
+  height: 45px; /* Đảm bảo chiều cao bằng với các input khác */
+  margin-top: 24px; /* Căn chỉnh để nút nằm ngang hàng với các input */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dashboard-admin-view-btn svg {
+  margin-right: 5px;
+}
+
+.dashboard-admin-revenue-table {
+  margin-top: 20px;
+}
+
+.dashboard-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.dashboard-admin-table th {
+  background-color: #f8fafc;
+  color: #334155;
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+.dashboard-admin-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 14px;
+}
+
+/* Special component: Outlet Balance Card */
+.dashboard-admin-outlet-balance {
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.dashboard-admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.dashboard-admin-table tr:hover td {
+  background-color: #f1f5f9;
+}
+
+.dashboard-admin-table .no-data {
+  text-align: center;
+  padding: 24px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* balance */
+
+.dashboard-admin-outlet-balance-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.dashboard-admin-outlet-balance-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-admin-outlet-balance-change {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dashboard-admin-outlet-balance-graph {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  opacity: 0.3;
+}
+
+.dashboard-admin-withdraw-btn {
+  background-color: white;
+  color: #1a73e8;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dashboard-admin-withdraw-btn:hover {
+  background-color: #f0f5ff;
+}
+.dashboard-admin-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dashboard-admin-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.dashboard-admin-modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  max-height: 80vh;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+}
+
+.dashboard-admin-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.dashboard-admin-modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #343a40;
+}
+
+.dashboard-admin-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.dashboard-admin-modal-close:hover {
+  color: #343a40;
+}
+
+.dashboard-admin-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  max-height: calc(80vh - 70px);
+}
+
+.dashboard-admin-orders-list-modal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-admin-modal-content {
+    width: 95%;
+  }
+
+  .dashboard-admin-orders-list-modal {
+    grid-template-columns: 1fr;
+  }
+}
+/* In your dashboard.css */
+
+.footer-admin {
+  background-color: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  border-top: 1px solid #ddd;
+  margin-top: 80px;
+}
+
+.footer-content {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+.footer-content a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 14px;
+  margin: 0 15px;
+}
+
+.footer-links a:hover {
+  color: #007bff;
+}
+/* Success and Error Messages */
+.dashboard-admin-success-message {
+  background-color: rgba(76, 175, 80, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in;
+  position: relative;
+  font-weight: 500;
+}
+
+.dashboard-admin-success-message::before {
+  content: "✓";
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dashboard-admin-error-message {
+  background-color: rgba(244, 67, 54, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in;
+  position: relative;
+  font-weight: 500;
+}
+
+.dashboard-admin-error-message::before {
+  content: "✕";
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Add a nice fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Error text for individual form fields */
+.dashboard-admin-error-text {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.dashboard-admin-error-input {
+  border-color: #f44336;
+}
+
+/* Style for form validation messages */
+.dashboard-admin-form-group .dashboard-admin-error-message {
+  font-size: 12px;
+  padding: 8px 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}

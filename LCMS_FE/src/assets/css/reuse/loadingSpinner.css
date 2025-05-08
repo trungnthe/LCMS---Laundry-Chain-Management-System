@@ -1,0 +1,23 @@
+.my-loading-spinner {
+  width: 4rem; /* Kích thước của spinner */
+  height: 4rem;
+  border: 8px solid #d1d5db; /* Màu sắc của phần ngoài */
+  border-top: 8px solid #3ba3d6; /* Màu sắc của phần quay */
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* Áp dụng animation */
+}
+
+.my-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Bắt đầu từ góc 0 */
+  }
+  100% {
+    transform: rotate(360deg); /* Quay 360 độ */
+  }
+}

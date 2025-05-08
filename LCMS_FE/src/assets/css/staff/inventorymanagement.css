@@ -1,0 +1,654 @@
+/* CSS nâng cấp cho giao diện quản lý kho */
+
+/* Reset và cài đặt chung */
+.manage-inventory-staff-container {
+  font-family: 'Roboto', 'San Francisco', 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #f5f7fa;
+  padding: 24px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.manage-inventory-staff-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header và tiêu đề */
+.manage-inventory-staff-header {
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.manage-inventory-staff-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.manage-inventory-staff-title:after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+}
+
+.manage-inventory-staff-subtitle {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+/* Card chung */
+.manage-inventory-staff-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 28px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+/* Phần tìm kiếm */
+.manage-inventory-staff-toolbar {
+  padding: 20px;
+  border-bottom: 1px solid #eaedf3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.manage-inventory-staff-search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.manage-inventory-staff-search-input {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #dfe1e5;
+  background-color: #f9fafc;
+  font-size: 14px;
+  transition: all 0.3s;
+  -webkit-appearance: none;
+}
+
+.manage-inventory-staff-search-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+  background-color: #fff;
+}
+
+.manage-inventory-staff-search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7f8c8d;
+  pointer-events: none;
+}
+
+/* Danh sách lô hàng */
+.manage-inventory-staff-lot-list {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.manage-inventory-staff-lot-item {
+  border-bottom: 1px solid #eaedf3;
+  transition: all 0.3s ease;
+}
+
+.manage-inventory-staff-lot-item:last-child {
+  border-bottom: none;
+}
+
+.manage-inventory-staff-lot-header {
+  padding: 16px 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.manage-inventory-staff-lot-header:hover {
+  background-color: #f5f9ff;
+}
+
+.manage-inventory-staff-lot-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.manage-inventory-staff-lot-code {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.manage-inventory-staff-lot-code svg {
+  margin-right: 10px;
+  color: #3498db;
+  flex-shrink: 0;
+}
+
+.manage-inventory-staff-lot-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.manage-inventory-staff-lot-supplier {
+  display: flex;
+  align-items: center;
+}
+
+.manage-inventory-staff-lot-supplier:before {
+  content: '•';
+  margin-right: 8px;
+  color: #bdc3c7;
+}
+
+.manage-inventory-staff-lot-count {
+  display: flex;
+  align-items: center;
+  background-color: #eef5fd;
+  color: #3498db;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Nội dung lô khi mở rộng */
+.manage-inventory-staff-lot-content {
+  background-color: #f9fafc;
+  border-top: 1px solid #eaedf3;
+  padding: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling for tables */
+}
+
+/* Bảng dữ liệu */
+.manage-inventory-staff-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  min-width: 600px; /* Ensures table doesn't get too compressed */
+}
+
+.manage-inventory-staff-table-header {
+  background-color: #f5f7fa;
+}
+
+.manage-inventory-staff-table-th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #7f8c8d;
+  border-bottom: 1px solid #eaedf3;
+  white-space: nowrap;
+}
+
+.manage-inventory-staff-table-th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.manage-inventory-staff-table-th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.manage-inventory-staff-table-row {
+  transition: background-color 0.3s;
+}
+
+.manage-inventory-staff-table-row:hover {
+  background-color: #f0f4f8;
+}
+
+.manage-inventory-staff-table-td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eaedf3;
+  color: #2c3e50;
+}
+
+.manage-inventory-staff-table-row:last-child .manage-inventory-staff-table-td {
+  border-bottom: none;
+}
+
+.manage-inventory-staff-actions-column {
+  width: 140px;
+}
+
+.manage-inventory-staff-actions-cell {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Số lượng thấp */
+.manage-inventory-staff-low-quantity {
+  color: #e74c3c;
+  font-weight: 600;
+  position: relative;
+  padding: 2px 8px;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: 4px;
+}
+
+/* Nút thao tác */
+.manage-inventory-staff-icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px; /* Enlarged from 6px for better touch targets */
+  border-radius: 6px;
+  color: #7f8c8d;
+  transition: all 0.2s ease;
+  min-width: 36px; /* Minimum size for touch targets */
+  min-height: 36px;
+}
+
+.manage-inventory-staff-edit-icon {
+  color: #3498db;
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.manage-inventory-staff-edit-icon:hover {
+  background-color: rgba(52, 152, 219, 0.2);
+}
+
+.manage-inventory-staff-save-icon {
+  color: #27ae60;
+  background-color: rgba(39, 174, 96, 0.1);
+}
+
+.manage-inventory-staff-save-icon:hover {
+  background-color: rgba(39, 174, 96, 0.2);
+}
+
+.manage-inventory-staff-cancel-icon {
+  color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.manage-inventory-staff-cancel-icon:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+}
+
+.manage-inventory-staff-add-icon {
+  color: #27ae60;
+  background-color: rgba(39, 174, 96, 0.1);
+}
+
+.manage-inventory-staff-add-icon:hover {
+  background-color: rgba(39, 174, 96, 0.2);
+}
+
+.manage-inventory-staff-minus-icon {
+  color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+}
+.manage-inventory-staff-confirm-icon {
+  color: #2ecc71;
+  background-color: rgba(231, 76, 60, 0.1);
+}
+.manage-inventory-staff-minus-icon:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+}
+
+/* Thống kê nhanh */
+.manage-inventory-staff-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eaedf3;
+}
+
+.manage-inventory-staff-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 24px;
+}
+
+.manage-inventory-staff-stat-card {
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.manage-inventory-staff-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.manage-inventory-staff-stat-blue {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+}
+
+.manage-inventory-staff-stat-green {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+}
+
+.manage-inventory-staff-stat-red {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.manage-inventory-staff-stat-label {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.manage-inventory-staff-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* Input điều chỉnh số lượng */
+.manage-inventory-staff-quantity-adjustment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.manage-inventory-staff-quantity-input {
+  width: 60px;
+  padding: 8px; /* Increased from 6px for better touch targets */
+  border-radius: 6px;
+  border: 1px solid #dfe1e5;
+  text-align: center;
+  font-size: 16px; /* Larger for mobile */
+  -webkit-appearance: none; /* Remove default iOS styling */
+}
+
+.manage-inventory-staff-quantity-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.manage-inventory-staff-quantity-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+/* Trạng thái trống */
+.manage-inventory-staff-empty-message {
+  padding: 40px 20px;
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+/* Input chỉnh sửa */
+.manage-inventory-staff-edit-input {
+  width: 100%;
+  padding: 10px; /* Increased from 8px for better touch targets */
+  border-radius: 6px;
+  border: 1px solid #3498db;
+  font-size: 16px; /* Larger for mobile */
+  background-color: white;
+  -webkit-appearance: none;
+}
+
+.manage-inventory-staff-edit-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Animation cho mở rộng */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.manage-inventory-staff-lot-content {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* RESPONSIVE STYLES */
+
+/* Tablet - Medium devices */
+@media (max-width: 992px) {
+  .manage-inventory-staff-container {
+      padding: 20px;
+  }
+  
+  .manage-inventory-staff-title {
+      font-size: 24px;
+  }
+  
+  .manage-inventory-staff-stats-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  .manage-inventory-staff-stat-value {
+      font-size: 28px;
+  }
+}
+
+/* Mobile - Small devices */  
+@media (max-width: 768px) {
+  .manage-inventory-staff-container {
+      padding: 16px 12px;
+  }
+  
+  .manage-inventory-staff-title {
+      font-size: 22px;
+  }
+  
+  .manage-inventory-staff-lot-header {
+      padding: 14px 16px;
+  }
+  
+  .manage-inventory-staff-lot-details {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+  }
+  
+  .manage-inventory-staff-lot-supplier:before {
+      display: none;
+  }
+  
+  .manage-inventory-staff-toolbar {
+      flex-direction: column;
+      align-items: stretch;
+  }
+  
+  .manage-inventory-staff-search-container {
+      max-width: 100%;
+  }
+  
+  .manage-inventory-staff-table-th,
+  .manage-inventory-staff-table-td {
+      padding: 10px 8px;
+      font-size: 13px;
+  }
+  
+  .manage-inventory-staff-stats-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 16px;
+  }
+  
+  .manage-inventory-staff-actions-cell {
+      flex-wrap: wrap;
+  }
+  
+  .manage-inventory-staff-section-title {
+      font-size: 16px;
+      padding: 16px;
+  }
+  
+  /* Increase icon button size for better touch targets */
+  .manage-inventory-staff-icon-button {
+      min-width: 44px;
+      min-height: 44px;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 480px) {
+  .manage-inventory-staff-container {
+      padding: 12px 8px;
+  }
+  
+  .manage-inventory-staff-title {
+      font-size: 20px;
+  }
+  
+  .manage-inventory-staff-subtitle {
+      font-size: 14px;
+  }
+  
+  .manage-inventory-staff-lot-code {
+      font-size: 15px;
+  }
+  
+  .manage-inventory-staff-lot-details {
+      font-size: 13px;
+  }
+  
+  .manage-inventory-staff-lot-header {
+      padding: 12px;
+  }
+  
+  .manage-inventory-staff-lot-content {
+      padding: 12px 8px;
+  }
+  
+  /* Make table rows display as cards */
+  .manage-inventory-staff-table {
+      display: block;
+      min-width: unset;
+  }
+  
+  .manage-inventory-staff-table-header {
+      display: none; /* Hide table headers */
+  }
+  
+  .manage-inventory-staff-table-row {
+      display: block;
+      margin-bottom: 12px;
+      border: 1px solid #eaedf3;
+      border-radius: 8px;
+      background-color: white;
+      padding: 8px;
+  }
+  
+  .manage-inventory-staff-table-td {
+      display: flex;
+      padding: 8px;
+      border-bottom: 1px dashed #eaedf3;
+      font-size: 14px;
+      align-items: center;
+  }
+  
+  .manage-inventory-staff-table-td:before {
+      content: attr(data-label);
+      font-weight: 600;
+      width: 40%;
+      margin-right: 10px;
+  }
+  
+  .manage-inventory-staff-table-td:last-child {
+      border-bottom: none;
+  }
+  
+  .manage-inventory-staff-actions-cell {
+      justify-content: flex-end;
+  }
+  
+  .manage-inventory-staff-quantity-adjustment {
+      justify-content: space-between;
+      width: 100%;
+      background-color: #27ae60;
+
+  }
+  
+  .manage-inventory-staff-stat-card {
+      padding: 16px;
+  }
+  
+  .manage-inventory-staff-stat-value {
+      font-size: 24px;
+  }
+}
+
+/* Improve accessibility for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .manage-inventory-staff-icon-button {
+      padding: 10px;
+  }
+  
+  .manage-inventory-staff-lot-header {
+      padding-top: 16px;
+      padding-bottom: 16px;
+  }
+  
+  /* Increase spacing between interactive elements */
+  .manage-inventory-staff-actions-cell {
+      gap: 12px;
+  }
+  
+  .manage-inventory-staff-quantity-buttons {
+      gap: 8px;
+  }
+  
+  /* Make form controls larger */
+  input[type="text"],
+  input[type="number"],
+  input[type="search"],
+  select,
+  button {
+      min-height: 44px;
+  }
+}
+
+/* Fix for iOS input zoom issue */
+@supports (-webkit-touch-callout: none) {
+  input[type="text"],
+  input[type="number"],
+  input[type="search"] {
+      font-size: 16px !important; /* Prevents zoom on focus in iOS */
+  }
+}

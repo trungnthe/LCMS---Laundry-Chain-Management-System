@@ -1,0 +1,1523 @@
+/* BookingListStaff Component Styling */
+
+/* Main container styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+.bookinglist-staff-container {
+  padding: 20px;
+  max-width: 1780px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+/* Page title styling */
+.bookinglist-staff-title {
+  font-size: 28px;
+  color: #111827;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f3f4f6;
+  position: relative;
+}
+
+.bookinglist-staff-title:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+/* Tabs styling */
+.bookinglist-staff-tabs {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.bookinglist-staff-tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.bookinglist-staff-tab-list li {
+  margin-bottom: -1px;
+}
+
+.bookinglist-staff-tab-list button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: none;
+  color: #607d8b;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.bookinglist-staff-tab-list button:hover {
+  color: #3498db;
+}
+
+.bookinglist-staff-tab-list button.active {
+  color: #2980b9;
+  border-bottom: 3px solid #2980b9;
+  font-weight: 600;
+}
+
+/* Filter toggle button */
+.bookinglist-staff-filter-toggle {
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bookinglist-staff-btn-filter-toggle {
+  background-color: #f5f7fa;
+  border: 1px solid #e0e5eb;
+  color: #4a5568;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.bookinglist-staff-btn-filter-toggle:hover {
+  background-color: #edf2f7;
+  color: #2c3e50;
+}
+
+.bookinglist-staff-btn-filter-toggle::before {
+  content: "⚙️";
+  margin-right: 8px;
+}
+
+/* Advanced filters styling */
+.bookinglist-staff-advanced-filters {
+  background-color: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e0e5eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.bookinglist-staff-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.bookinglist-staff-filter-row:last-child {
+  margin-bottom: 0;
+}
+
+.bookinglist-staff-filter-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+.bookinglist-staff-filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.bookinglist-staff-filter-group input,
+.bookinglist-staff-filter-group select {
+  width: 100%;
+  padding: 0.675rem 0.875rem;
+  border: 1px solid #d1d9e6;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #2d3748;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.bookinglist-staff-filter-group input:focus,
+.bookinglist-staff-filter-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.bookinglist-staff-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 1;
+  min-width: 150px;
+}
+
+.bookinglist-staff-btn-reset-filter {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  padding: 0.675rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.bookinglist-staff-btn-reset-filter:hover {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+/* Loading spinner */
+.bookinglist-staff-loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.bookinglist-staff-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(52, 152, 219, 0.1);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: bookinglist-staff-spin 1s ease infinite;
+}
+
+@keyframes bookinglist-staff-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error message styling */
+.bookinglist-staff-error-message {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookinglist-staff-retry-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.bookinglist-staff-retry-button:hover {
+  background-color: #dc2626;
+}
+
+/* Table container */
+.bookinglist-staff-table-container {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+/* Booking table */
+.bookinglist-staff-booking-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.95rem;
+}
+
+.bookinglist-staff-booking-table thead th {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: sticky;
+  top: 0;
+}
+
+.bookinglist-staff-booking-table thead th:hover {
+  background-color: #e5e7eb;
+}
+
+.bookinglist-staff-booking-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.bookinglist-staff-booking-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.bookinglist-staff-booking-table tbody td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.bookinglist-staff-booking-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Empty state */
+.bookinglist-staff-no-bookings {
+  text-align: center;
+  padding: 3rem 1rem !important;
+  color: #6b7280 !important;
+  font-style: italic;
+}
+
+/* Status badges */
+.bookinglist-staff-status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.status-pending {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fef3c7;
+}
+
+.status-confirmed {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #d1fae5;
+}
+
+.status-cancelled {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+}
+
+.status-rejected {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+}
+
+.status-in-progress {
+  background-color: #eef2ff;
+  color: #4f46e5;
+  border: 1px solid #e0e7ff;
+}
+
+.status-completed {
+  background-color: #f0fdfa;
+  color: #0d9488;
+  border: 1px solid #ccfbf1;
+}
+
+.status-ready {
+  background-color: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #e0f2fe;
+}
+
+.status-delivery {
+  background-color: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ede9fe;
+}
+
+.status-delivered {
+  background-color: #f8fafc;
+  color: #55b61d;
+  border: 1px solid #f1f5f9;
+}
+
+.status-received {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #dbeafe;
+}
+
+.status-default {
+  background-color: #f4f6f3;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+/* Membership badges */
+.bookinglist-staff-membership-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.bookinglist-staff-membership-default {
+  background-color: #f3f4f6; /* Màu xám nhạt */
+  color: #4b5563; /* Màu chữ xám đậm */
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.bookinglist-staff-bronze {
+  background-color: #d6bcab;
+  color: #7c4a31;
+}
+
+.bookinglist-staff-silver {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+.bookinglist-staff-gold {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.bookinglist-staff-platinum {
+  background-color: #e6e6fa;
+  color: #4a3f8c;
+}
+.bookinglist-staff-diamond {
+  background-color: #bde0fe;
+  color: #023e8a;
+}
+
+/* Action buttons */
+.bookinglist-staff-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bookinglist-staff-action-buttons button {
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.bookinglist-staff-btn-detail {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.bookinglist-staff-btn-detail:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.bookinglist-staff-btn-confirm {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.bookinglist-staff-btn-confirm:hover {
+  background-color: #0284c7;
+}
+
+.bookinglist-staff-btn-cancel,
+.bookinglist-staff-btn-reject {
+  background-color: #ef4444;
+  color: white;
+}
+
+.bookinglist-staff-btn-cancel:hover,
+.bookinglist-staff-btn-reject:hover {
+  background-color: #dc2626;
+}
+
+.bookinglist-staff-btn-progress {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.bookinglist-staff-btn-progress:hover {
+  background-color: #2563eb;
+}
+
+.bookinglist-staff-btn-ready {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.bookinglist-staff-btn-ready:hover {
+  background-color: #7c3aed;
+}
+
+.bookinglist-staff-btn-delivery {
+  background-color: #ec4899;
+  color: white;
+}
+
+.bookinglist-staff-btn-delivery:hover {
+  background-color: #db2777;
+}
+
+.bookinglist-staff-btn-delivered {
+  background-color: #2dd4bf;
+  color: white;
+}
+
+.bookinglist-staff-btn-delivered:hover {
+  background-color: #14b8a6;
+}
+
+.bookinglist-staff-btn-received {
+  background-color: #4ade80;
+  color: white;
+}
+
+.bookinglist-staff-btn-received:hover {
+  background-color: #22c55e;
+}
+
+.bookinglist-staff-btn-complete {
+  background-color: #16a34a;
+  color: white;
+}
+
+.bookinglist-staff-btn-complete:hover {
+  background-color: #15803d;
+}
+
+/* Pagination styles */
+.bookinglist-staff-pagination-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.bookinglist-staff-booking-count {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.bookinglist-staff-count {
+  font-weight: 600;
+  color: #374151;
+}
+
+.bookinglist-staff-pagination-info {
+  margin-left: 0.5rem;
+  color: #9ca3af;
+}
+
+.bookinglist-staff-pagination-controls select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.bookinglist-staff-pagination-buttons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.bookinglist-staff-pagination-buttons button {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  color: #4b5563;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bookinglist-staff-btn-prev,
+.bookinglist-staff-btn-next {
+  font-weight: 500;
+}
+
+.bookinglist-staff-pagination-buttons button:hover:not(:disabled) {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+  color: #1f2937;
+}
+
+.bookinglist-staff-pagination-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bookinglist-staff-page-number {
+  min-width: 2.25rem;
+  text-align: center;
+}
+
+.bookinglist-staff-page-number.active {
+  background-color: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bookinglist-staff-filter-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bookinglist-staff-filter-group {
+    width: 100%;
+  }
+
+  .bookinglist-staff-pagination-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .bookinglist-staff-pagination-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bookinglist-staff-pagination-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* BookingListStaff Component Styling */
+
+/* Main container styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+.bookinglist-staff-container {
+  padding: 20px;
+  max-width: 1780px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+/* Mobile adjustments for main container */
+@media (max-width: 576px) {
+  .bookinglist-staff-container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+}
+
+/* Page title styling */
+.bookinglist-staff-title {
+  font-size: 28px;
+  color: #111827;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f3f4f6;
+  position: relative;
+}
+
+.bookinglist-staff-title:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+/* Mobile adjustments for title */
+@media (max-width: 576px) {
+  .bookinglist-staff-title {
+    font-size: 22px;
+    margin-bottom: 1.5rem;
+  }
+
+  .bookinglist-staff-title:after {
+    width: 80px;
+  }
+}
+
+/* Tabs styling */
+.bookinglist-staff-tabs {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  overflow-x: auto; /* Enable horizontal scrolling for tabs on mobile */
+}
+
+.bookinglist-staff-tab-list {
+  display: flex;
+  flex-wrap: nowrap; /* Changed to nowrap for scrolling on mobile */
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+  min-width: min-content; /* Ensure tabs don't shrink too much */
+}
+
+.bookinglist-staff-tab-list li {
+  margin-bottom: -1px;
+}
+
+.bookinglist-staff-tab-list button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: none;
+  color: #607d8b;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Prevent tab text from wrapping */
+}
+
+/* Mobile adjustments for tabs */
+@media (max-width: 576px) {
+  .bookinglist-staff-tab-list button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.bookinglist-staff-tab-list button:hover {
+  color: #3498db;
+}
+
+.bookinglist-staff-tab-list button.active {
+  color: #2980b9;
+  border-bottom: 3px solid #2980b9;
+  font-weight: 600;
+}
+
+/* Filter toggle button */
+.bookinglist-staff-filter-toggle {
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Mobile adjustments for filter toggle */
+@media (max-width: 576px) {
+  .bookinglist-staff-filter-toggle {
+    margin-bottom: 1rem;
+  }
+}
+
+.bookinglist-staff-btn-filter-toggle {
+  background-color: #f5f7fa;
+  border: 1px solid #e0e5eb;
+  color: #4a5568;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.bookinglist-staff-btn-filter-toggle:hover {
+  background-color: #edf2f7;
+  color: #2c3e50;
+}
+
+.bookinglist-staff-btn-filter-toggle::before {
+  content: "⚙️";
+  margin-right: 8px;
+}
+
+/* Advanced filters styling */
+.bookinglist-staff-advanced-filters {
+  background-color: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e0e5eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Mobile adjustments for advanced filters */
+@media (max-width: 576px) {
+  .bookinglist-staff-advanced-filters {
+    padding: 1rem;
+  }
+}
+
+.bookinglist-staff-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.bookinglist-staff-filter-row:last-child {
+  margin-bottom: 0;
+}
+
+.bookinglist-staff-filter-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* Mobile adjustments for filter groups */
+@media (max-width: 768px) {
+  .bookinglist-staff-filter-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bookinglist-staff-filter-group {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+.bookinglist-staff-filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.bookinglist-staff-filter-group input,
+.bookinglist-staff-filter-group select {
+  width: 100%;
+  padding: 0.675rem 0.875rem;
+  border: 1px solid #d1d9e6;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #2d3748;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+/* Improve mobile touch targets */
+@media (max-width: 576px) {
+  .bookinglist-staff-filter-group input,
+  .bookinglist-staff-filter-group select {
+    padding: 0.75rem 0.875rem; /* Slightly larger touch target */
+    font-size: 16px; /* Prevent auto-zoom on iOS */
+  }
+}
+
+.bookinglist-staff-filter-group input:focus,
+.bookinglist-staff-filter-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.bookinglist-staff-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Adjust filter actions for mobile */
+@media (max-width: 768px) {
+  .bookinglist-staff-filter-actions {
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+.bookinglist-staff-btn-reset-filter {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  padding: 0.675rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+/* Mobile adjustments for reset button */
+@media (max-width: 576px) {
+  .bookinglist-staff-btn-reset-filter {
+    padding: 0.75rem 1.25rem; /* Larger touch target */
+    width: 100%; /* Full width on small screens */
+  }
+}
+
+.bookinglist-staff-btn-reset-filter:hover {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+/* Loading spinner */
+.bookinglist-staff-loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.bookinglist-staff-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(52, 152, 219, 0.1);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: bookinglist-staff-spin 1s ease infinite;
+}
+
+@keyframes bookinglist-staff-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error message styling */
+.bookinglist-staff-error-message {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 1rem; /* Add gap between elements when wrapped */
+}
+
+.bookinglist-staff-retry-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+/* Mobile adjustments for retry button */
+@media (max-width: 576px) {
+  .bookinglist-staff-retry-button {
+    padding: 0.75rem 1rem; /* Larger touch target */
+    width: 100%; /* Full width on very small screens */
+  }
+}
+
+.bookinglist-staff-retry-button:hover {
+  background-color: #dc2626;
+}
+
+/* Table container */
+.bookinglist-staff-table-container {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Booking table */
+.bookinglist-staff-booking-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.95rem;
+}
+
+.bookinglist-staff-booking-table thead th {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensure header stays above table content */
+}
+
+/* Mobile adjustments for table headers */
+@media (max-width: 576px) {
+  .bookinglist-staff-booking-table thead th {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.bookinglist-staff-booking-table thead th:hover {
+  background-color: #e5e7eb;
+}
+
+.bookinglist-staff-booking-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.bookinglist-staff-booking-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.bookinglist-staff-booking-table tbody td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+/* Mobile adjustments for table cells */
+@media (max-width: 576px) {
+  .bookinglist-staff-booking-table tbody td {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.bookinglist-staff-booking-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Empty state */
+.bookinglist-staff-no-bookings {
+  text-align: center;
+  padding: 3rem 1rem !important;
+  color: #6b7280 !important;
+  font-style: italic;
+}
+
+/* Status badges */
+.bookinglist-staff-status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Mobile adjustments for status badges */
+@media (max-width: 576px) {
+  .bookinglist-staff-status-badge {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Status badge styles */
+.status-pending {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fef3c7;
+}
+
+.status-confirmed {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #d1fae5;
+}
+
+.status-cancelled {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+}
+
+.status-rejected {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+}
+
+.status-in-progress {
+  background-color: #eef2ff;
+  color: #4f46e5;
+  border: 1px solid #e0e7ff;
+}
+
+.status-completed {
+  background-color: #f0fdfa;
+  color: #0d9488;
+  border: 1px solid #ccfbf1;
+}
+
+.status-ready {
+  background-color: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #e0f2fe;
+}
+
+.status-delivery {
+  background-color: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ede9fe;
+}
+
+.status-delivered {
+  background-color: #f8fafc;
+  color: #55b61d;
+  border: 1px solid #f1f5f9;
+}
+
+.status-received {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #dbeafe;
+}
+
+.status-default {
+  background-color: #f4f6f3;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+/* Membership badges */
+.bookinglist-staff-membership-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+/* Mobile adjustments for membership badges */
+@media (max-width: 576px) {
+  .bookinglist-staff-membership-badge {
+    margin-left: 0.3rem;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+.bookinglist-staff-membership-default {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* Membership badge colors */
+.bookinglist-staff-bronze {
+  background-color: #d6bcab;
+  color: #7c4a31;
+}
+
+.bookinglist-staff-silver {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+.bookinglist-staff-gold {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.bookinglist-staff-platinum {
+  background-color: #e6e6fa;
+  color: #4a3f8c;
+}
+
+.bookinglist-staff-diamond {
+  background-color: #bde0fe;
+  color: #023e8a;
+}
+
+/* Action buttons */
+.bookinglist-staff-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Mobile adjustments for action buttons */
+@media (max-width: 576px) {
+  .bookinglist-staff-action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.bookinglist-staff-action-buttons button {
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+/* Mobile adjustments for buttons */
+@media (max-width: 576px) {
+  .bookinglist-staff-action-buttons button {
+    padding: 0.5rem 0.75rem; /* Larger touch targets */
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
+
+.bookinglist-staff-btn-detail {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.bookinglist-staff-btn-detail:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.bookinglist-staff-btn-confirm {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.bookinglist-staff-btn-confirm:hover {
+  background-color: #0284c7;
+}
+
+.bookinglist-staff-btn-cancel,
+.bookinglist-staff-btn-reject {
+  background-color: #ef4444;
+  color: white;
+}
+
+.bookinglist-staff-btn-cancel:hover,
+.bookinglist-staff-btn-reject:hover {
+  background-color: #dc2626;
+}
+
+.bookinglist-staff-btn-progress {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.bookinglist-staff-btn-progress:hover {
+  background-color: #2563eb;
+}
+
+.bookinglist-staff-btn-ready {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.bookinglist-staff-btn-ready:hover {
+  background-color: #7c3aed;
+}
+
+.bookinglist-staff-btn-delivery {
+  background-color: #ec4899;
+  color: white;
+}
+
+.bookinglist-staff-btn-delivery:hover {
+  background-color: #db2777;
+}
+
+.bookinglist-staff-btn-waiting {
+  background-color: #ec4899;
+  color: white;
+}
+
+.bookinglist-staff-btn-waiting:hover {
+  background-color: #db2777;
+}
+
+.bookinglist-staff-btn-delivered {
+  background-color: #2dd4bf;
+  color: white;
+}
+
+.bookinglist-staff-btn-delivered:hover {
+  background-color: #14b8a6;
+}
+
+.bookinglist-staff-btn-received {
+  background-color: #4ade80;
+  color: white;
+}
+
+.bookinglist-staff-btn-received:hover {
+  background-color: #22c55e;
+}
+
+.bookinglist-staff-btn-complete {
+  background-color: #16a34a;
+  color: white;
+}
+
+.bookinglist-staff-btn-complete:hover {
+  background-color: #15803d;
+}
+
+/* Pagination styles */
+.bookinglist-staff-pagination-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Mobile adjustments for pagination */
+@media (max-width: 768px) {
+  .bookinglist-staff-pagination-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+.bookinglist-staff-booking-count {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.bookinglist-staff-count {
+  font-weight: 600;
+  color: #374151;
+}
+
+.bookinglist-staff-pagination-info {
+  margin-left: 0.5rem;
+  color: #9ca3af;
+}
+
+.bookinglist-staff-pagination-controls {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile adjustments for pagination controls */
+@media (max-width: 768px) {
+  .bookinglist-staff-pagination-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.bookinglist-staff-pagination-controls select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+/* Mobile adjustments for select dropdown */
+@media (max-width: 576px) {
+  .bookinglist-staff-pagination-controls select {
+    padding: 0.6rem;
+    font-size: 16px; /* Prevent auto-zoom on iOS */
+  }
+}
+
+.bookinglist-staff-pagination-buttons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+/* Mobile adjustments for pagination buttons */
+@media (max-width: 768px) {
+  .bookinglist-staff-pagination-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* For very small screens, adjust button size */
+@media (max-width: 360px) {
+  .bookinglist-staff-pagination-buttons {
+    gap: 0.15rem;
+  }
+}
+
+.bookinglist-staff-pagination-buttons button {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  color: #4b5563;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Mobile adjustments for pagination buttons */
+@media (max-width: 576px) {
+  .bookinglist-staff-pagination-buttons button {
+    padding: 0.6rem 0.75rem;
+  }
+}
+
+/* For very small screens, make buttons more compact */
+@media (max-width: 360px) {
+  .bookinglist-staff-pagination-buttons button {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.85rem;
+  }
+}
+
+.bookinglist-staff-btn-prev,
+.bookinglist-staff-btn-next {
+  font-weight: 500;
+}
+
+.bookinglist-staff-pagination-buttons button:hover:not(:disabled) {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+  color: #1f2937;
+}
+
+.bookinglist-staff-pagination-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bookinglist-staff-page-number {
+  min-width: 2.25rem;
+  text-align: center;
+}
+
+/* Adjust page number button width on small screens */
+@media (max-width: 360px) {
+  .bookinglist-staff-page-number {
+    min-width: 2rem;
+  }
+}
+
+.bookinglist-staff-page-number.active {
+  background-color: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+/* Additional mobile optimizations for the table on very small screens */
+@media (max-width: 480px) {
+  /* Add a data-label attribute to your table cells in HTML and use this CSS */
+  .bookinglist-staff-booking-table thead {
+    display: none; /* Hide table headers on very small screens */
+  }
+
+  .bookinglist-staff-booking-table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+  }
+
+  .bookinglist-staff-booking-table tbody td {
+    display: block;
+    text-align: right;
+    padding: 0.75rem 1rem;
+    position: relative;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .bookinglist-staff-booking-table tbody td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    color: #4b5563;
+  }
+
+  .bookinglist-staff-booking-table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  /* Center the action buttons on mobile */
+  .bookinglist-staff-booking-table td:last-child {
+    text-align: center;
+  }
+}

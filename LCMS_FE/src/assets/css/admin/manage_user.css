@@ -1,0 +1,851 @@
+/* Main container styles */
+.manage-user-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.manage-user {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 260px;
+}
+
+.manage-user h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-top: 80px;
+}
+/* Membership Level Badge Styles with Gradients */
+.membership-level-badge {
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Basic level - Subtle gray gradient */
+.membership-level-badge.basic {
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  color: #505050;
+  border: 1px solid #d1d1d1;
+}
+
+/* Bronze level - Bronze metallic gradient */
+.membership-level-badge.bronze {
+  background: linear-gradient(135deg, #e0a877, #cd7f32, #a06023);
+  color: white;
+  border: 1px solid #a5662a;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Silver level - Silver metallic gradient */
+.membership-level-badge.silver {
+  background: linear-gradient(135deg, #e6e6e6, #c0c0c0, #d8d8d8);
+  color: #333;
+  border: 1px solid #a9a9a9;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Gold level - Gold metallic gradient */
+.membership-level-badge.gold {
+  background: linear-gradient(135deg, #f9d423, #ffd700, #f5bc00);
+  color: #5c4813;
+  border: 1px solid #e6c200;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Diamond level - Diamond blue gradient with shine effect */
+.membership-level-badge.diamond {
+  background: linear-gradient(135deg, #b9f2ff, #84e2f7, #59c1f0);
+  color: #006d87;
+  border: 1px solid #69d2f9;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+/* Add shine effect to Diamond badge */
+.membership-level-badge.diamond::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 30%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(30deg);
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
+/* Style for the membership level column in the table */
+.membership-level-cell {
+  white-space: nowrap;
+}
+
+/* Add hover effects */
+.membership-level-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+/* Tab Navigation Styles */
+.manage-user-tabs {
+  display: flex;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.manage-user-tab {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 12px 20px;
+  font-weight: 500;
+  color: #6c757d;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.manage-user-tab:hover {
+  color: #3498db;
+  background-color: #f8f9fa;
+}
+
+.manage-user-tab.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+  background-color: #f8f9fa;
+}
+
+.manage-user-tab-content {
+  padding: 15px 0;
+}
+
+/* Monthly Ticket Specific Styles */
+.manage-user-status-badge.active,
+.manage-user-status-badge.effective {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.manage-user-status-badge.expired {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.manage-user-status-badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Form Container */
+.manage-user-form-container {
+  margin-bottom: 20px;
+}
+
+/* Icons with text alignment */
+.manage-user-tab svg,
+.manage-user-total-customers svg,
+.manage-user-sort-btn svg {
+  font-size: 16px;
+  margin-right: 2px;
+}
+
+/* Additional responsive adjustments for tabs */
+@media (max-width: 576px) {
+  .manage-user-tabs {
+    flex-wrap: wrap;
+  }
+
+  .manage-user-tab {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}
+
+/* Style for form with status messages */
+.manage-user-form-with-status {
+  position: relative;
+  padding-top: 10px;
+}
+
+/* Ticket-specific card styles */
+.manage-user-ticket-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.manage-user-ticket-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.manage-user-ticket-dates {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.manage-user-ticket-date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.manage-user-ticket-price {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 16px;
+}
+
+/* Date icons */
+.manage-user-date-icon {
+  color: #6c757d;
+}
+
+/* Exchange icon */
+.manage-user-exchange-icon {
+  color: #17a2b8;
+}
+
+/* Fix for any styling conflicts */
+.manage-user {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+@media (min-width: 992px) {
+  .manage-user {
+    margin-left: 260px;
+    margin-top: 20px;
+  }
+}
+
+/* Fix for the header spacing when sidebar is collapsed */
+@media (max-width: 991px) {
+  .manage-user h2 {
+    margin-top: 20px;
+  }
+}
+
+/* Success and Error Messages */
+.manage-user-success-message {
+  background-color: rgba(76, 175, 80, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in;
+  position: relative;
+  font-weight: 500;
+}
+
+.manage-user-success-message::before {
+  content: "✓";
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.manage-user-error-message {
+  background-color: rgba(244, 67, 54, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in;
+  position: relative;
+  font-weight: 500;
+}
+
+.manage-user-error-message::before {
+  content: "✕";
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.manage-user-error-text {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.manage-user-form-group .manage-user-error-message {
+  font-size: 12px;
+  padding: 8px 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Header section with search and add button */
+.manage-user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.manage-user-add-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.manage-user-add-btn:hover {
+  background-color: #218838;
+}
+
+/* Search box styles */
+.manage-user-search {
+  position: relative;
+  min-width: 300px;
+}
+
+.manage-user-search-input {
+  width: 100%;
+  padding: 10px 40px 10px 35px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.manage-user-search-input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.manage-user-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.manage-user-clear-search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.manage-user-clear-search-icon:hover {
+  color: #dc3545;
+}
+
+/* Controls section */
+.manage-user-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.manage-user-total-customers {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #444;
+}
+
+.manage-user-sort-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.manage-user-sort-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Table styles */
+.manage-user-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.manage-user-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.manage-user-table th {
+  background-color: #3498db;
+  color: white;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.manage-user-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.manage-user-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.manage-user-table tr:hover {
+  background-color: #e9ecef;
+}
+
+.manage-user-no-data {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Status badges */
+.manage-user-status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.manage-user-status-badge.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.manage-user-status-badge.blocked {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.manage-user-status-badge.inactive {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Action buttons */
+.manage-user-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.manage-user-edit-btn {
+  padding: 6px 12px;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.manage-user-edit-btn:hover {
+  background-color: #138496;
+}
+
+.manage-user-status-select {
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Pagination controls */
+.manage-user-pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.manage-user-pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.manage-user-records-per-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manage-user-select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Pagination */
+.manage-user-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.manage-user-pagination-btn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-user-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.manage-user-pagination-btn:not(:disabled):hover {
+  background-color: #e2e6ea;
+}
+
+.manage-user-pagination-numbers {
+  display: flex;
+  gap: 5px;
+}
+
+.manage-user-pagination-number {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.manage-user-pagination-number.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.manage-user-pagination-number:not(.active):hover {
+  background-color: #e2e6ea;
+}
+
+.manage-user-pagination-ellipsis {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+/* Jump to page */
+.manage-user-jump-to-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manage-user-jump-input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.manage-user-jump-btn {
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-user-jump-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Loading state */
+.manage-user-loading-container {
+  text-align: center;
+  padding: 50px;
+  color: #6c757d;
+}
+
+/* Error state */
+.manage-user-error-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.manage-user-reload-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-user-reload-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Modal styles */
+.manage-user-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.manage-user-modal-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-user-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.manage-user-modal-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.manage-user-close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.manage-user-modal-inputs {
+  padding: 20px;
+}
+
+/* Form styles */
+.manage-user-form-group {
+  margin-bottom: 15px;
+}
+
+.manage-user-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.manage-user-form-group input,
+.manage-user-form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.manage-user-form-group input:focus,
+.manage-user-form-group select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.manage-user-required {
+  color: #dc3545;
+  margin-left: 3px;
+}
+
+.manage-user-input-container {
+  position: relative;
+}
+
+.manage-user-input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.manage-user-input-container input {
+  padding-left: 35px;
+}
+
+/* Modal action buttons */
+.manage-user-modal-actions {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #dee2e6;
+}
+
+.manage-user-modal-save-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.manage-user-modal-save-btn:hover {
+  background-color: #2980b9;
+}
+
+.manage-user-modal-close-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.manage-user-modal-close-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .manage-user-header,
+  .manage-user-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .manage-user-search {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .manage-user-pagination-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .manage-user-pagination-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,868 @@
+/* Subscription CSS - Updated for Laundry Ticket Registration */
+.laundry-ticket-staff-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+  color: #333;
+  background-color: #f5f7fa;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.laundry-ticket-staff-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.laundry-ticket-staff-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2a4365;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-header {
+  margin-right: 10px;
+  color: #3182ce;
+}
+
+.laundry-ticket-staff-header p {
+  font-size: 16px;
+  color: #718096;
+  margin: 0;
+}
+
+.laundry-ticket-staff-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.laundry-ticket-staff-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.laundry-ticket-staff-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.card-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a4365;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.laundry-ticket-staff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.laundry-ticket-staff-form-group {
+  margin-bottom: 20px;
+}
+
+.laundry-ticket-staff-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.laundry-ticket-staff-input,
+.laundry-ticket-staff-select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s;
+  background-color: #fff;
+}
+
+.laundry-ticket-staff-input:focus,
+.laundry-ticket-staff-select:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+.laundry-ticket-staff-input::placeholder {
+  color: #a0aec0;
+}
+
+.laundry-ticket-staff-search-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-button {
+  padding: 14px 18px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  margin-left: -2px;
+  transition: all 0.2s;
+}
+
+.search-button:hover {
+  background-color: #2b6cb0;
+}
+
+.search-button:disabled {
+  background-color: #a0aec0;
+  cursor: wait;
+}
+
+.search-results {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 8px;
+}
+
+.search-results h4 {
+  padding: 10px 15px;
+  margin: 0;
+  color: #4a5568;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.search-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e6ed;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results li:hover {
+  background-color: #ebf8ff;
+}
+
+.search-results li strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #2d3748;
+}
+
+.search-results li div {
+  font-size: 13px;
+  color: #718096;
+}
+
+.new-customer-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.new-customer-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: #38b2ac;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.new-customer-button:hover {
+  background-color: #319795;
+}
+
+.customer-info-section {
+  background-color: #f7fafc;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-top: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header h4 {
+  margin: 0;
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.cancel-button {
+  background-color: #e53e3e;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: #c53030;
+}
+
+.laundry-ticket-staff-ticket-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.laundry-ticket-staff-ticket-option {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.laundry-ticket-staff-ticket-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.laundry-ticket-staff-ticket-option.active {
+  border-color: #3182ce;
+  box-shadow: 0 8px 24px rgba(49, 130, 206, 0.15);
+}
+
+.ticket-plan-icon {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.laundry-ticket-staff-ticket-option h3 {
+  margin: 0 0 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.laundry-ticket-staff-ticket-option .price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+.laundry-ticket-staff-ticket-option .benefits {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.laundry-ticket-staff-ticket-option .benefit-item {
+  padding: 6px 0;
+  color: #4a5568;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.laundry-ticket-staff-ticket-option .savings {
+  background-color: #ebf8ff;
+  color: #3182ce;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.selected-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #3182ce;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.laundry-ticket-staff-payment-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.laundry-ticket-staff-summary {
+  background-color: #f7fafc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.laundry-ticket-staff-summary h3 {
+  margin: 0 0 15px;
+  color: #2d3748;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.laundry-ticket-staff-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.laundry-ticket-staff-summary-row:last-child {
+  border-bottom: none;
+}
+
+.laundry-ticket-staff-summary-row span:first-child {
+  color: #718096;
+}
+
+.laundry-ticket-staff-summary-row span:last-child {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.laundry-ticket-staff-summary-row.total {
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 2px solid #e2e8f0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.laundry-ticket-staff-summary-row.total span:last-child {
+  color: #3182ce;
+}
+
+.laundry-ticket-staff-button {
+  padding: 16px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.laundry-ticket-staff-button:hover {
+  background-color: #2b6cb0;
+  transform: translateY(-2px);
+}
+
+.laundry-ticket-staff-button.disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.laundry-ticket-staff-button.disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.laundry-ticket-staff-success {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #c6f6d5;
+  border: 1px solid #9ae6b4;
+  color: #276749;
+  border-radius: 8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.laundry-ticket-staff-error {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fed7d7;
+  border: 1px solid #feb2b2;
+  color: #c53030;
+  border-radius: 8px;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .laundry-ticket-staff-grid,
+  .laundry-ticket-staff-payment-row {
+    grid-template-columns: 1fr;
+  }
+
+  .laundry-ticket-staff-ticket-options {
+    grid-template-columns: 1fr;
+  }
+
+  .laundry-ticket-staff-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .laundry-ticket-staff-header h1 {
+    font-size: 24px;
+  }
+
+  .laundry-ticket-staff-header p {
+    font-size: 14px;
+  }
+
+  .laundry-ticket-staff-form-group {
+    margin-bottom: 15px;
+  }
+
+  .laundry-ticket-staff-input,
+  .laundry-ticket-staff-select {
+    padding: 12px 14px;
+  }
+
+  .laundry-ticket-staff-ticket-option {
+    padding: 18px;
+  }
+
+  .laundry-ticket-staff-button {
+    padding: 14px;
+  }
+}
+
+/* Custom scrollbar */
+.search-results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 10px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Additional styling for better UX */
+.laundry-ticket-staff-input:focus::placeholder {
+  color: transparent;
+}
+
+/* Hover effects for ticket options */
+.laundry-ticket-staff-ticket-option:hover .benefits {
+  color: #2d3748;
+}
+
+/* Ribbon effect for best value */
+.laundry-ticket-staff-ticket-option:nth-child(2)::before {
+  content: "Phổ biến";
+  position: absolute;
+  top: 25px;
+  right: -35px;
+  background: #f6ad55;
+  color: white;
+  padding: 5px 40px;
+  transform: rotate(45deg);
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+/* Loading spinner for search */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* Style for input when validation error */
+.input-error {
+  border-color: #e53e3e !important;
+}
+
+/* Print media styles */
+@media print {
+  .laundry-ticket-staff-container {
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .new-customer-action,
+  .search-button,
+  .cancel-button,
+  .laundry-ticket-staff-button {
+    display: none !important;
+  }
+
+  .laundry-ticket-staff-card {
+    break-inside: avoid;
+    border: 1px solid #e2e8f0;
+    box-shadow: none;
+  }
+
+  .search-results {
+    display: none;
+  }
+
+  .laundry-ticket-staff-summary {
+    page-break-inside: avoid;
+  }
+}
+
+/* Transitions for smoother UI */
+.customer-info-section {
+  transition: all 0.3s ease;
+}
+
+/* Custom checkbox styling for future use */
+.laundry-custom-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.laundry-custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #cbd5e0;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.laundry-custom-checkbox:hover input ~ .checkmark {
+  border-color: #3182ce;
+}
+
+.laundry-custom-checkbox input:checked ~ .checkmark {
+  background-color: #3182ce;
+  border-color: #3182ce;
+}
+
+.checkmark:after {
+  content: "";
+  display: none;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.laundry-custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Styling for the payment options */
+.payment-methods {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.payment-method-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 80px;
+}
+
+.payment-method-option:hover {
+  border-color: #cbd5e0;
+  background: #edf2f7;
+}
+
+.payment-method-option.selected {
+  border-color: #3182ce;
+  background: #ebf8ff;
+}
+
+.payment-method-option .icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #4a5568;
+}
+
+.payment-method-option.selected .icon {
+  color: #3182ce;
+}
+
+.payment-method-option .label {
+  font-size: 12px;
+  color: #4a5568;
+}
+
+/* Focus styles for accessibility */
+.laundry-ticket-staff-button:focus,
+.search-button:focus,
+.new-customer-button:focus,
+.cancel-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.4);
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-info {
+  background-color: #bee3f8;
+  color: #2a4365;
+}
+
+.badge-warning {
+  background-color: #feebc8;
+  color: #744210;
+} /* QR Payment Modal - Elegant Design */
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  backdrop-filter: blur(5px);
+  animation: modalBackgroundFade 0.3s ease;
+}
+
+@keyframes modalBackgroundFade {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.custom-modal-content {
+  background: white;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.custom-modal-content h2 {
+  margin: 0;
+  padding: 20px 24px;
+  font-size: 1.25rem;
+  color: #fff;
+  background: linear-gradient(135deg, #2c3e50, #4a6fa5);
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.custom-modal-content h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+  border-radius: 3px;
+}
+
+.custom-modal-content iframe {
+  display: block;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 16px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.custom-modal-content button {
+  display: block;
+  margin: 0 auto 24px;
+  padding: 12px 30px;
+  background: linear-gradient(to right, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3);
+}
+
+.custom-modal-content button:hover {
+  background: linear-gradient(to right, #2980b9, #1c6ea4);
+  box-shadow: 0 6px 12px rgba(41, 128, 185, 0.4);
+  transform: translateY(-2px);
+}
+
+.custom-modal-content button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(41, 128, 185, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .custom-modal-content {
+    width: 95%;
+  }
+
+  .custom-modal-content h2 {
+    font-size: 1.125rem;
+    padding: 16px 20px;
+  }
+
+  .custom-modal-content iframe {
+    margin: 12px;
+    height: 350px;
+  }
+
+  .custom-modal-content button {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+}
+.payment-form-submit-btn.payment-success {
+  background-color: #8bc34a;
+}

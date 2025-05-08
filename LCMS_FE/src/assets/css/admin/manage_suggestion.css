@@ -1,0 +1,978 @@
+.admin-containerrrr {
+  margin-left: 260px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.manage-suggestion-admin-title {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-top: 80px;
+}
+
+/* Search and filter styles */
+.manage-suggestion-search-filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .manage-suggestion-search-filter-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.manage-suggestion-search-box {
+  position: relative;
+  flex: 1;
+}
+
+.manage-suggestion-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-style: normal;
+}
+
+.manage-suggestion-search-box input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.manage-suggestion-filter-container {
+  display: flex;
+  gap: 10px;
+}
+
+.manage-suggestion-filter-box {
+  position: relative;
+}
+
+.manage-suggestion-filter-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-style: normal;
+}
+
+.manage-suggestion-filter-box select {
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  min-width: 180px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+/* Summary and actions */
+.manage-suggestion-summary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.manage-suggestion-summary {
+  font-weight: 500;
+  color: #555;
+}
+
+.manage-suggestion-sort-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.manage-suggestion-sort-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+}
+
+.manage-suggestion-sort-button:hover {
+  background-color: #e8e8e8;
+}
+
+.manage-suggestion-add-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.manage-suggestion-add-button:hover {
+  background-color: #218838;
+}
+
+/* Form styles */
+.manage-suggestion-form-container {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.manage-suggestion-form-container h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.manage-suggestion-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .manage-suggestion-form-row {
+    flex-direction: row;
+  }
+}
+
+.manage-suggestion-form-group {
+  flex: 1;
+}
+
+.manage-suggestion-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.manage-suggestion-form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.manage-suggestion-form-group input:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+.manage-suggestion-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.manage-suggestion-cancel-button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.manage-suggestion-cancel-button:hover {
+  background-color: #e8e8e8;
+}
+
+.manage-suggestion-submit-button {
+  padding: 8px 16px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.manage-suggestion-submit-button:hover {
+  background-color: #0b7dda;
+}
+
+.manage-suggestion-submit-button:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+}
+
+/* Table styles */
+.manage-suggestion-table-container {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.manage-suggestion-data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.manage-suggestion-data-table th {
+  background-color: #2196f3;
+  color: white;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 500;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Fix for table header alignment issues */
+.manage-suggestion-data-table th,
+.manage-suggestion-data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.manage-suggestion-data-table th {
+  background-color: #2196f3;
+  color: white;
+  font-weight: 500;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Make sure all cells in a column have consistent width */
+.manage-suggestion-data-table th:nth-child(1),
+.manage-suggestion-data-table td:nth-child(1) {
+  width: 5%; /* STT column */
+  text-align: center;
+}
+
+.manage-suggestion-data-table th:nth-child(2),
+.manage-suggestion-data-table td:nth-child(2) {
+  width: 20%; /* Weather keyword column */
+}
+
+.manage-suggestion-data-table th:nth-child(3),
+.manage-suggestion-data-table td:nth-child(3) {
+  width: 30%; /* Product name column */
+}
+
+.manage-suggestion-data-table th:nth-child(4),
+.manage-suggestion-data-table td:nth-child(4) {
+  width: 30%; /* Service name column */
+}
+
+.manage-suggestion-data-table th:nth-child(5),
+.manage-suggestion-data-table td:nth-child(5) {
+  width: 15%; /* Actions column */
+  text-align: center;
+}
+
+/* Fix for the responsiveness */
+@media (max-width: 768px) {
+  .manage-suggestion-data-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .manage-suggestion-admin-title {
+    margin-top: 60px; /* Reduced top margin on mobile */
+  }
+}
+
+/* Fix for actions column button alignment */
+.manage-suggestion-action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.manage-suggestion-edit-button,
+.manage-suggestion-delete-button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.manage-suggestion-edit-button {
+  background-color: #ffc107;
+  color: #212529;
+}
+.manage-suggestion-edit-button:hover {
+  background-color: #e0a800;
+}
+
+.manage-suggestion-delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+.manage-suggestion-delete-button:hover {
+  background-color: #c82333;
+}
+.manage-suggestion-data-table th:last-child {
+  border-right: none;
+}
+
+.manage-suggestion-data-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.manage-suggestion-data-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.manage-suggestion-data-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+.manage-suggestion-loading-cell,
+.manage-suggestion-empty-cell {
+  text-align: center;
+  padding: 30px !important;
+  color: #666;
+}
+
+.manage-suggestion-status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.manage-suggestion-status-badge.active {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.manage-suggestion-status-badge.inactive {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.manage-suggestion-action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.manage-suggestion-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+.manage-suggestion-view-button {
+  background-color: #17a2b8;
+}
+
+.manage-suggestion-view-button:hover {
+  background-color: #138496;
+}
+
+.manage-suggestion-edit-button {
+  background-color: #ffc107;
+}
+
+.manage-suggestion-edit-button:hover {
+  background-color: #e0a800;
+}
+
+.manage-suggestion-delete-button {
+  background-color: #dc3545;
+}
+
+.manage-suggestion-delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Image thumbnail */
+.manage-suggestion-thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Pagination styles */
+.manage-suggestion-pagination-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.manage-suggestion-pagination-info {
+  color: #666;
+  font-size: 14px;
+}
+
+.manage-suggestion-pagination {
+  display: flex;
+  gap: 5px;
+}
+
+.manage-suggestion-pagination-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 5px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-suggestion-pagination-button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.manage-suggestion-pagination-button.active {
+  background-color: #2196f3;
+  color: white;
+  border-color: #2196f3;
+}
+
+.manage-suggestion-pagination-button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.manage-suggestion-pagination-goto {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.manage-suggestion-pagination-goto input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.manage-suggestion-go-button {
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-suggestion-go-button:hover {
+  background-color: #e8e8e8;
+}
+
+/* Modal styles */
+/* Form Modal Styles */
+.manage-suggestion-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.manage-suggestion-form-modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 550px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.4s ease-out;
+}
+
+.manage-suggestion-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9fafc;
+  border-radius: 8px 8px 0 0;
+}
+
+.manage-suggestion-modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.manage-suggestion-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #95a5a6;
+  transition: color 0.2s;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.manage-suggestion-close-button:hover {
+  color: #e74c3c;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.manage-suggestion-modal-body {
+  padding: 24px;
+}
+
+.manage-suggestion-form-group {
+  margin-bottom: 20px;
+}
+
+.manage-suggestion-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #34495e;
+}
+
+.manage-suggestion-form-group input,
+.manage-suggestion-form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #fff;
+}
+
+.manage-suggestion-form-group input:focus,
+.manage-suggestion-form-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+.manage-suggestion-form-group input::placeholder {
+  color: #b2b2b2;
+}
+
+.manage-suggestion-form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2395a5a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.manage-suggestion-form-group select:disabled {
+  background-color: #f5f7fa;
+  color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.manage-suggestion-form-group select option {
+  padding: 10px;
+}
+
+.manage-suggestion-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.manage-suggestion-cancel-button {
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #606266;
+  transition: all 0.2s;
+}
+
+.manage-suggestion-cancel-button:hover {
+  background-color: #eaeaea;
+  color: #333;
+}
+
+.manage-suggestion-submit-button {
+  padding: 10px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.manage-suggestion-submit-button:hover {
+  background-color: #2980b9;
+}
+
+.manage-suggestion-submit-button:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.manage-suggestion-delete-modal {
+  background-color: white;
+  border-radius: 4px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.manage-suggestion-delete-modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.manage-suggestion-delete-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.manage-suggestion-close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.manage-suggestion-delete-modal-body {
+  padding: 20px;
+}
+
+.manage-suggestion-delete-modal-body p {
+  margin: 0 0 10px 0;
+}
+
+.manage-suggestion-warning-text {
+  color: #f44336;
+  font-weight: 500;
+}
+
+.manage-suggestion-delete-modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.manage-suggestion-delete-confirm-button {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.manage-suggestion-delete-confirm-button:hover {
+  background-color: #d32f2f;
+}
+
+.manage-suggestion-delete-confirm-button:disabled {
+  background-color: #ffcdd2;
+  cursor: not-allowed;
+}
+
+/* Notification */
+.manage-suggestion-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+.manage-suggestion-notification.success {
+  background-color: #4caf50;
+}
+
+.manage-suggestion-notification.error {
+  background-color: #f44336;
+}
+
+/* Weather Suggestions Styles */
+.manage-suggestion-weather-suggestions-container {
+  background-color: white;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.manage-suggestion-weather-suggestions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.manage-suggestion-weather-suggestions-header h2 {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+}
+
+.manage-suggestion-city-selection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.manage-suggestion-city-selection label {
+  font-weight: 500;
+}
+
+.manage-suggestion-city-selection select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.manage-suggestion-city-selection button {
+  padding: 8px 16px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-suggestion-weather-products-container {
+  margin-top: 15px;
+}
+
+.manage-suggestion-loading {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
+
+.manage-suggestion-no-suggestions {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.manage-suggestion-weather-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.manage-suggestion-product-card {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.manage-suggestion-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.manage-suggestion-product-image {
+  height: 150px;
+  overflow: hidden;
+}
+
+.manage-suggestion-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.manage-suggestion-no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.manage-suggestion-product-info {
+  padding: 15px;
+}
+
+.manage-suggestion-product-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.manage-suggestion-product-info p {
+  margin: 0 0 10px 0;
+  color: #28a745;
+  font-weight: 500;
+}
+
+.manage-suggestion-service-info {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.manage-suggestion-service-info span {
+  font-size: 14px;
+  color: #666;
+}
+
+.manage-suggestion-weather-suggestion-btn {
+  padding: 8px 16px;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-suggestion-weather-suggestion-btn:hover {
+  background-color: #138496;
+}
+
+/* Form Modal */
+.manage-suggestion-form-modal {
+  background-color: white;
+  border-radius: 4px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.manage-suggestion-modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.manage-suggestion-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.manage-suggestion-modal-body {
+  padding: 20px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
